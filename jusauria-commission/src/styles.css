@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+/* --- Variables --- */
+:root{
+    --darkPinkRed: #6e0d40;
+    --pinkRed: #B11567;
+    --lilac: #B59BD1;
+    --mewPink: #FEC4D3;
+    --skinColor: #FAE0E0;
+    --shinyBlue: #94EDF3;
+    --juPink: #EDA6E6;
+}
+
+/* --- General --- */
+body{
+    background: var(--skinColor)
+}

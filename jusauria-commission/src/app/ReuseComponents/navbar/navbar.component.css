@@ -1,0 +1,25 @@
+/* --- Nav Bar --- */
+.navbar{
+    background-color: var(--pinkRed);
+}
+nav *{
+    color: white
+}
+
+/* --- Drop down --- */
+.dropdown-menu{
+    background-color: var(--pinkRed);
+    color: white;
+    border-color:var(--juPink) ;
+}
+.dropdown-item:hover{
+    background-color: var(--darkPinkRed);
+}
+
+/* --- Selection*/
+.navbar-nav .nav-link.show{
+    color:var(--juPink)
+}
+::after{
+    color:var(--juPink)
+}
