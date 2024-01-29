@@ -6,6 +6,13 @@ nav *{
     color: white
 }
 
+/* --- Spinner --- */
+.spinnerFrame{
+    border: 2px solid var(--darkPinkRed);
+    padding: 6px;
+    border-radius: 10px;
+    background-color: var(--darkPinkRed) ;
+}
 /* --- Drop down --- */
 .dropdown-menu{
     background-color: var(--pinkRed);

@@ -3,7 +3,9 @@
 :root{
     --darkPinkRed: #6e0d40;
     --pinkRed: #B11567;
-    --lilac: #B59BD1;
+    --lightLilac: #C8A2C8;
+    --lilac: #b16db1;
+    --darkLilac: rgb(170, 129, 170);
     --mewPink: #FEC4D3;
     --skinColor: #FAE0E0;
     --shinyBlue: #94EDF3;
@@ -12,5 +14,20 @@
 
 /* --- General --- */
 body{
-    background: var(--skinColor)
+    background: var(--skinColor);
+    font-family: "Merienda", cursive;
+}
+/*space from nav*/
+.navSpace{
+    margin-top: 4.5rem;
+}
+.row{
+    margin: 0px -6px;
+}
+/* --- Buttons --- */
+.btn-lilac{
+    background: var(--lilac)
+}
+.btn-lilac:hover{
+    background: var(--darkLilac)
 }

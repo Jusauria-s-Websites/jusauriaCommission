@@ -13,10 +13,10 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutProfileComponent },
     // --- Work Services ---
-    { path: WorkOffersEnum.art, component: ArtComponent },
-    { path: WorkOffersEnum.embroidery, component: EmbroideryComponent },
-    { path: WorkOffersEnum.live2d, component: VTuberRiggingComponent },
-    { path: WorkOffersEnum.program, component: ProgrammingComponent },
+    { path: ':'+WorkOffersEnum.art, component: ArtComponent },
+    { path: ':'+WorkOffersEnum.embroidery, component: EmbroideryComponent },
+    { path: ':'+WorkOffersEnum.live2d, component: VTuberRiggingComponent },
+    { path: ':'+WorkOffersEnum.program, component: ProgrammingComponent },
 
     
 ];
