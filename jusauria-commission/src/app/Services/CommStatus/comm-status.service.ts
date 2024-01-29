@@ -14,6 +14,10 @@ export class CommStatusService {
     new ServiceDetails("Embroidery Commission","Embroidery includes making handmade Patches or wall decorations. Furthermore is Crochet work also an option to select.","/"+WorkOffersEnum.embroidery,""),
     new ServiceDetails("Live2d Commission","Live2d only includes Rigging a character or making custom animations for them.","/"+WorkOffersEnum.live2d,""),
   ]
+  cheapServiceOffers: ServiceDetails[]=[
+    new ServiceDetails("YCH Commissions","Your Character Here - Pose is decided and you can see your character drawn in this pose and scene. Cheaper than regular drawings but also less change opportunities.","https://www.deviantart.com/jusauria/gallery/78700756/ych",""),
+    new ServiceDetails("Redbubble Shop","Redbubble is a website to buy physical items with the art you desire. Stickers and more can be ordered there. By request Jusauria can upload her art there for you to purchase.", "https://www.redbubble.com/de/people/Jusauria-tryout/shop?asc=u","")
+  ]
 
   constructor() { }
 

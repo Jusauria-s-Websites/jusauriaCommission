@@ -1,0 +1,6 @@
+a{
+    color: var(--darkShiny);
+}
+a:hover{
+    color: var(--shinyBlue);
+}

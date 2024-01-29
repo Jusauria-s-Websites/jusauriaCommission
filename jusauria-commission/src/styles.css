@@ -9,6 +9,7 @@
     --mewPink: #FEC4D3;
     --skinColor: #FAE0E0;
     --shinyBlue: #94EDF3;
+    --darkShiny: #5da1dd;
     --juPink: #EDA6E6;
 }
 
@@ -23,6 +24,7 @@ body{
 }
 .row{
     margin: 0px -6px;
+    padding-right: 1px;
 }
 /* --- Buttons --- */
 .btn-lilac{
