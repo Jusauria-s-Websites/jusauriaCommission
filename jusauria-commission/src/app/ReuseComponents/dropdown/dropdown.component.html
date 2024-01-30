@@ -1,0 +1,12 @@
+<div class="dropdown-header" [ngClass]="{'selected':isContentVisible}" (click)="toggleContentVisibility()">
+    <div class="row">
+        <h2 class="col-6">{{header}}</h2>
+        <i class="col-6 text-end align-self-center fa-solid fa-caret-down"></i>
+    </div>
+    
+</div>
+@if (isContentVisible) {
+    <div class="dropdown-content show">
+        <ng-content></ng-content>
+    </div>
+}

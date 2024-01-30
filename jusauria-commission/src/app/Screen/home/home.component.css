@@ -8,6 +8,9 @@
 .carousel-item{
     width: none !important;
 }
+.navSpace{
+    margin-top: 4.5rem;
+}
 /* --- Colors --- */
 .commOpen{
     color: rgb(16, 203, 16);
