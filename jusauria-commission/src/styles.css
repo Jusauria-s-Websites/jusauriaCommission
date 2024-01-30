@@ -17,13 +17,14 @@
 body{
     background: var(--skinColor);
     font-family: "Merienda", cursive;
+    font-size: 15px;
 }
 /*space from nav*/
 .navSpace{
     margin-top: 6rem;
 }
 .row{
-    margin: 0px -6px;
+    margin: 0px -7px;
     padding-right: 1px;
 }
 
@@ -43,4 +44,9 @@ h4{
 }
 .btn-lilac:hover{
     background: var(--darkLilac)
+}
+
+/* --- List --- */
+li{
+    word-wrap: break-word;
 }
