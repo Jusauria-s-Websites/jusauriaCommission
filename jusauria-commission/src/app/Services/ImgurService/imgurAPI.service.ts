@@ -13,9 +13,9 @@ export class ImgurAPIService {
   refreshToken:string="faf5b311ed57253a94c4122b84846dbc8d8fb57d";
   
   constructor(private http: HttpClient) {}
-  getAlbumImages(album:Albums): Promise<AlbumImage[]>{    
-    return new Promise((resolve,reject)=>{this.http.get<any>(this.apiUrlBase+`album/${album}/images`, {
-      headers: {'Authorization': `Client-ID ${this.clientId}`}
+  getAlbumImages(album:string): Promise<AlbumImage[]>{    
+    return new Promise((resolve,reject)=>{this.http.get<any>(this.apiUrlBase+`account/Jusauria/album/${album}`, {
+      headers: {'Authorization': `Bearer ${this.accessToken}`}
     }).subscribe(result=>{
       if(result.status==200){
         //cuts the result so that you get the name and the link of image

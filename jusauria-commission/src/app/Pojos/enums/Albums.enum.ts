@@ -1,12 +1,26 @@
 export enum Albums {
+    /* --- Home --- */ 
     ServiceIconAlbum="",
-    JusauriaAlbum="",
-    HeadshotAlbum="",
-    HalfBodyAlbum="",
-    FullBodyAlbum="",
-    ChibiAlbum="",
-    AnimationAlbum="",
-    RefSheetAlbum="",
+    homeAlbum="mgacmu3",
+    /* --- Art Basic ---*/ 
+    HeadshotAlbum="QKDzKQ0",
+    HalfBodyAlbum="BuUFfx2",
+    FullBodyAlbum="ZKQyjzr",
+    EmoteAlbum="dxeGxZk",
+    StickerAlbum="GQjHRMq",
+    /* --- Art Special ---  */
+    AnimationAlbum="bV0cHnh",
+    RefSheetAlbum="tpvXhTD",
+    CustomBaseAlbum="bnYhxs4",
+    BackgroundAlbum="dwo5AGu",
+    /* --- Example Art BG --- */
+    SimpleBackgroundAlbum="YXKZadp",
+    DetailedBackgroundAlbum="azZJbhb",
+    /* --- YCH --- */
+    YCHAlbum="RLRjzT4",
+    /* --- Vtuber --- */
     VTuberAlbum="",
+
+     /* --- Embroidery and Crochet --- */
     EmbroideryAlbum="",
 }

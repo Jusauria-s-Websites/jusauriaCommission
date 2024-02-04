@@ -18,9 +18,9 @@ export class CommStatusService {
     new ServiceDetails("YCH Commissions","Your Character Here - Pose is decided and you can see your character drawn in this pose and scene. Cheaper than regular drawings but also less change opportunities.","https://www.deviantart.com/jusauria/gallery/78700756/ych",""),
     new ServiceDetails("Redbubble Shop","Redbubble is a website to buy physical items with the art you desire. Stickers and more can be ordered there. By request Jusauria can upload her art there for you to purchase.", "https://www.redbubble.com/de/people/Jusauria-tryout/shop?asc=u","")
   ]
-
+  
   constructor() { }
-
+  
   getCommStatusText():string{
     return this.commState?this.commStatusText[0]:this.commStatusText[1];
   }

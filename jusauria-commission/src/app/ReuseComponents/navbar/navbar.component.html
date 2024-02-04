@@ -1,3 +1,6 @@
+<div class="fixed-top below box" >
+  <p style="color:transparent">d</p>
+</div>
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand me-4 me-md-5" href="home">
@@ -6,7 +9,7 @@
         <span class="col-6 h2 align-self-center fw-bold">Jusauria</span>
       </div>
     </a>
-    <button class="ms-5 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="ms-4 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -17,7 +20,7 @@
           </a>
           <ul class="dropdown-menu">
             @for(service of serviceOffers; track service){
-              <li><a class="dropdown-item" [routerLink]="service">{{service}}</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/'+service">{{service}}</a></li>
             }
           </ul>
         </li>
@@ -43,3 +46,5 @@
     </div>
   </div>
 </nav>
+
+

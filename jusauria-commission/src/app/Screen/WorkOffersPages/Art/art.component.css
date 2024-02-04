@@ -1,0 +1,28 @@
+img{
+    height: 12rem;
+}
+.pattern{
+    animation: moving 10s linear infinite;
+    background-image: url('../../../../assets/artPattern.png');
+    background-size: 35%;
+    background-repeat: repeat;
+}
+.heavenSave{
+    background: var(--skinColor);
+    box-shadow: .1px .1px 1rem 5px rgba(224, 16, 16, 0.177);
+}
+
+@media only screen and (min-width: 600px) {
+    .pattern {
+        padding: 0px 20%;
+    }
+}
+@keyframes moving{
+    0%{
+        background-position: 100% 100%;
+    }
+   100%{
+    background-position: 75% 70%;
+
+   }
+}

@@ -21,7 +21,7 @@ body{
 }
 /*space from nav*/
 .navSpace{
-    margin-top: 6rem;
+    margin-top: 4.5rem;
 }
 .row{
     margin: 0px -7px;
@@ -29,8 +29,12 @@ body{
 }
 
 /* --- Text Size --- */
+h2{
+    font-size: 1.5em;
+    font-weight: bolder ;
+}
 h3{
-    font-size: 1.13em;
+    font-size: 1.25em;
     font-weight: bolder ;
 }
 h4{
