@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   constructor(private imgur: ImgurAPIService){
     this.serviceOffers = Object.values(WorkOffersEnum)
     if(this.logoLink==""){
-      //this.imgur.getLogoImage().then(value=>this.logoLink=value)
+      this.imgur.getLogoImage().then(value=>this.logoLink=value)
     }
   }
   ngAfterViewInit(): void {
