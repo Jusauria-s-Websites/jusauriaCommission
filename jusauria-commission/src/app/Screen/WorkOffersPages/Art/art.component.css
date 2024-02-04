@@ -1,15 +1,27 @@
+/* --- General --- */
+.tiny{
+    font-size: .55rem;
+}
+/* --- Examples --- */
 img{
     height: 12rem;
+    padding: 5px;
+    border: 15px solid;
+    border-image: url('../../../../assets/border-art.png');
+    border-image-slice: 70;
 }
+button>i{
+    color: var(--darkPinkRed);
+}
+/* --- Background --- */
 .pattern{
-    animation: moving 10s linear infinite;
+    animation: moving 15s linear infinite;
     background-image: url('../../../../assets/artPattern.png');
     background-size: 35%;
-    background-repeat: repeat;
+    background-repeat: repeat;    
 }
 .heavenSave{
     background: var(--skinColor);
-    box-shadow: .1px .1px 1rem 5px rgba(224, 16, 16, 0.177);
 }
 
 @media only screen and (min-width: 600px) {
@@ -19,10 +31,9 @@ img{
 }
 @keyframes moving{
     0%{
-        background-position: 100% 100%;
+        background-position: 15rem 15rem ;
     }
    100%{
-    background-position: 75% 70%;
-
+    background-position: 0px 0px ;
    }
 }

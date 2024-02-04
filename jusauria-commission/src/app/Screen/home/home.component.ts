@@ -15,5 +15,6 @@ import { FooterComponent } from '../../ReuseComponents/footer/footer.component';
 export class HomeComponent {
   commStatusService: CommStatusService= new CommStatusService();
 
+
   constructor(){}
 }

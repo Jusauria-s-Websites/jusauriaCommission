@@ -7,6 +7,7 @@ import { ArtCommissionDetails } from '../../../Pojos/Objects/ArtCommissionDetail
 import { OfferServiceService } from '../../../Services/ArtService/ArtService.service';
 import { ImgurAPIService } from '../../../Services/ImgurService/imgurAPI.service';
 import { AlbumImage } from '../../../Pojos/Objects/AlbumImage';
+import { Albums } from '../../../Pojos/enums/Albums.enum';
 
 @Component({
   selector: 'app-art',
@@ -19,21 +20,32 @@ export class ArtComponent {
   typeBasic: ArtCommissionDetails[];
   special: ArtCommissionDetails[];
   backgrounds: ArtCommissionDetails[];
-  typeImages: Array<AlbumImage[]>=[];
-  specialImages:Array<AlbumImage[]>=[];
-  backgroundImages: Array<AlbumImage[]>=[];
-  ychExamples: AlbumImage[]=[];
+  albumImages: Map<string,AlbumImage[]>= new Map();
 
   constructor(private imgurService: ImgurAPIService){
     this.typeBasic= OfferServiceService.basicArtComms;
     this.special=OfferServiceService.specialArtComms;
     this.backgrounds=OfferServiceService.backgroundType;
 
-    /*for(let i =0; i<this.typeBasic.length;i++){
-      imgurService.getAlbumImages(this.typeBasic[i].artExampleAlbum).then(item=>{
-        this.typeImages.push(item);
+    
+    for(let i =0; i<this.special.length;i++){
+      imgurService.getAlbumImages(this.special[i].artExampleAlbum).then(item=>{
+        this.albumImages.set(this.special[i].type,item);
       })
-     
-    }*/
+    }
+    for(let i =0; i<this.typeBasic.length;i++){
+      imgurService.getAlbumImages(this.typeBasic[i].artExampleAlbum).then(item=>{
+        this.albumImages.set(this.typeBasic[i].type,item);
+      })
+    }
+    for(let i =0; i<this.backgrounds.length;i++){
+      imgurService.getAlbumImages(this.backgrounds[i].artExampleAlbum).then(item=>{
+        this.albumImages.set(this.backgrounds[i].type,item);
+      })
+    }
+      imgurService.getAlbumImages(Albums.YCHAlbum).then(item=>{
+        this.albumImages.set('ych',item);
+      })
+    
   }
 }
