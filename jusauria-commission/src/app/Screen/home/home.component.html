@@ -1,16 +1,16 @@
 
 <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        @for (item of albumImages.get('home'); track $index) {
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="$index" class="active" aria-current="true" aria-label="Slide $index"></button>
+        }
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="../../../assets/1.png" class="carousel-image"  alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="../../../assets/jgh.png" class="carousel-image" alt="...">
-        </div>
+        @for (items of  albumImages.get('home'); track items; let imageIndex=$index) {
+            <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
+                <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+            </div>
+        }
     </div>
 </div>
 

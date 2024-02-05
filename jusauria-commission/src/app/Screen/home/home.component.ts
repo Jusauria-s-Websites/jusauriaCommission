@@ -3,6 +3,9 @@ import { NavbarComponent } from '../../ReuseComponents/navbar/navbar.component';
 import { CommStatusService } from '../../Services/CommStatus/comm-status.service';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../../ReuseComponents/footer/footer.component';
+import { AlbumImage } from '../../Pojos/Objects/AlbumImage';
+import { Albums } from '../../Pojos/enums/Albums.enum';
+import { ImgurAPIService } from '../../Services/ImgurService/imgurAPI.service';
 
 
 @Component({
@@ -14,7 +17,16 @@ import { FooterComponent } from '../../ReuseComponents/footer/footer.component';
 })
 export class HomeComponent {
   commStatusService: CommStatusService= new CommStatusService();
-
-
-  constructor(){}
+  albumImages: Map<string,AlbumImage[]>= new Map();
+  
+  
+  constructor(private imgurService: ImgurAPIService){
+    
+    imgurService.getAlbumImages(Albums.homeAlbum).then(item=>{
+      this.albumImages.set('home',item);
+    })
+    /*imgurService.getAlbumImages(Albums.ServiceIconAlbum).then(item=>{
+      this.albumImages.set('icons',item);
+    })*/
+  }
 }
