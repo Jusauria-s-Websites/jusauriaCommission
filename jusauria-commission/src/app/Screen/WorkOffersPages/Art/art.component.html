@@ -46,7 +46,7 @@
                         <h3 class="text-center text-md-start col-12 mb-3">{{types.type}}</h3>
                         <div id="{{types.type}}" class="carousel slide col-md-5">
                             <div class="carousel-inner align-items-center">                          
-                                @for (items of  albumImages.get(types.type); track items.link; let imageIndex=$index) {
+                                @for (items of  albumImages.get(types.type); track items; let imageIndex=$index) {
                                     <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
                                         <img src="{{items.link}}" class="d-block mx-auto" alt="...">
                                     </div>
@@ -76,7 +76,7 @@
                         <h3 class="text-center text-md-start col-12 mb-">{{types.type}}</h3>
                         <div id="{{types.type}}" class="carousel slide col-md-5">
                             <div class="carousel-inner align-items-center">                        
-                                @for (items of  albumImages.get(types.type); track items.link; let imageIndex=$index) {
+                                @for (items of  albumImages.get(types.type); track items; let imageIndex=$index) {
                                     <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
                                         <img src="{{items.link}}" class="d-block mx-auto" alt="...">
                                     </div>
@@ -110,16 +110,16 @@
                         <h3 class="text-center mb-3">{{types.type}}</h3>
                         <div id="{{types.type}}" class="carousel slide">
                             <div class="carousel-inner align-items-center">                        
-                                @for (items of albumImages.get(types.type); track items.link; let imageIndex=$index) {
+                                @for (items of albumImages.get(types.type); track items; let imageIndex=$index) {
                                     <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
                                         <img src="{{items.link}}" class="d-block mx-auto" alt="...">
                                     </div>
                                 }
-                                <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#ych'"  data-bs-slide="prev">
+                                <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#'+types.type"  data-bs-slide="prev">
                                     <i class="fa-solid fa-chevron-left fa-2x"></i>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#ych'" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#'+types.type" data-bs-slide="next">
                                     <i class="fa-solid fa-chevron-right fa-2x"></i>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -142,7 +142,7 @@
                     <div class="col-md-6">
                         <div id="ych" class="carousel slide">
                             <div class="carousel-inner align-items-center">                         
-                                @for (items of albumImages.get('ych'); track items.link; let imageIndex=$index) {
+                                @for (items of albumImages.get('ych'); track items; let imageIndex=$index) {
                                     <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
                                         <img src="{{items.link}}" class="d-block mx-auto" alt="...">
                                     </div>

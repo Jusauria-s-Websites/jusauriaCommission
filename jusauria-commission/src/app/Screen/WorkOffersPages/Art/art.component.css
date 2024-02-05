@@ -4,7 +4,11 @@
 }
 /* --- Examples --- */
 img{
-    height: 12rem;
+    max-height: 12rem;
+    min-height: 12rem;
+    max-width: 268px;
+    height: auto;
+    width: auto;
     padding: 5px;
     border: 15px solid;
     border-image: url('../../../../assets/border-art.png');
@@ -15,7 +19,7 @@ button>i{
 }
 /* --- Background --- */
 .pattern{
-    animation: moving 15s linear infinite;
+    animation: moving 600s linear infinite;
     background-image: url('../../../../assets/artPattern.png');
     background-size: 35%;
     background-repeat: repeat;    
@@ -30,10 +34,10 @@ button>i{
     }
 }
 @keyframes moving{
-    0%{
-        background-position: 15rem 15rem ;
-    }
-   100%{
-    background-position: 0px 0px ;
-   }
+    0% {
+        background-position: bottom right ;
+      }
+      100% {
+        background-position: top left;
+      }
 }
