@@ -19,7 +19,7 @@ export class ImgurAPIService {
     }).subscribe(result=>{
       if(result.status==200){
         //cuts the result so that you get the name and the link of image
-        const albumImages: AlbumImage[] = result.data.map((image: any) => {
+        const albumImages: AlbumImage[] = result.data.images.map((image: any) => {
           return new AlbumImage(image.link, image.name);
         });
         resolve(albumImages);
