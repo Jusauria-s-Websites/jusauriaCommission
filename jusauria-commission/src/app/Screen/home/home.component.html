@@ -23,20 +23,21 @@
     <div class="row">
         <h2 class="col-12 mb-3">Services</h2>
         <div class="row d-flex justify-content-center">
-            @for(service of commStatusService.commServiceOffers; track service){
-                <div class="card col-md-5 mb-3 mb-md-5 me-md-5">
-                    <div class="row">
-                        <div class="col-4 col-md-3 d-flex align-items-start mt-3">
-                            <img src="../../../assets/1.png" class="card-img" alt="...">
-                        </div>
-                        <div class="col-8 col-md-9">
-                            <div class="card-body ">
-                                <h3 class="card-title">{{service.title}}</h3>
+            @for(service of commStatusService.commServiceOffers; track service; let i = $index){
+                <div class="card col-md-8 col-lg-5 mb-3 mb-md-5 me-md-5 serviceCard{{i}}">
+                    <div class="row d-flex justify-content-center" >
+                        <div class="row mt-1 pb-3" >
+                            <h3 class="card-title text-center mt-2 align-self-center" [ngClass]="{'juflair_blink2_Delayed juflair_rep_inf juflair_spe_slowmotion':i==1}">{{service.title}}</h3>
+                            <div class="col-4 col-md-3 p-0 p-md-1 d-flex align-items-start">
+                                <img src="../../../assets/1.png" class="card-img" alt="...">
+                            </div>
+                            <div class="col-8 col-md-9 d-flex align-items-center">
+                                <div class="card-body pt-0 ">
+                                    <p class="card-text">{{service.description}}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body ">
-                            <p class="card-text">{{service.description}}</p>
-                        </div>
+                       
                         <div class="card-footer text-end">
                             <a href="./{{service.mainPage}}" class="btn btn-lilac">More Details ></a>
                         </div>

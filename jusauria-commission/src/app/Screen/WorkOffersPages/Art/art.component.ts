@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../../../ReuseComponents/navbar/navbar.component';
 import { FooterComponent } from '../../../ReuseComponents/footer/footer.component';
 import { DropdownComponent } from '../../../ReuseComponents/dropdown/dropdown.component';
-import { ArtCommissionDetails } from '../../../Pojos/Objects/ArtCommissionDetails';
+import { CommissionDetails } from '../../../Pojos/Objects/CommissionDetails';
 import { OfferServiceService } from '../../../Services/ArtService/ArtService.service';
 import { ImgurAPIService } from '../../../Services/ImgurService/imgurAPI.service';
 import { AlbumImage } from '../../../Pojos/Objects/AlbumImage';
@@ -17,9 +17,9 @@ import { Albums } from '../../../Pojos/enums/Albums.enum';
   styleUrl: './art.component.css'
 })
 export class ArtComponent {
-  typeBasic: ArtCommissionDetails[];
-  special: ArtCommissionDetails[];
-  backgrounds: ArtCommissionDetails[];
+  typeBasic: CommissionDetails[];
+  special: CommissionDetails[];
+  backgrounds: CommissionDetails[];
   albumImages: Map<string,AlbumImage[]>= new Map();
 
   constructor(private imgurService: ImgurAPIService){

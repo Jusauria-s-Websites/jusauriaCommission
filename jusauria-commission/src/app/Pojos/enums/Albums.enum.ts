@@ -1,6 +1,6 @@
 export enum Albums {
     /* --- Home --- */ 
-    ServiceIconAlbum="",
+    ServiceIconAlbum="Q0BAANg",
     homeAlbum="mgacmu3",
     /* --- Art Basic ---*/ 
     HeadshotAlbum="QKDzKQ0",
@@ -23,4 +23,7 @@ export enum Albums {
 
      /* --- Embroidery and Crochet --- */
     EmbroideryAlbum="",
+
+    /* --- Programming --- */
+    programCommTypeIcon =""
 }

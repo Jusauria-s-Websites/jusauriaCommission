@@ -1,6 +1,6 @@
 import { Albums } from "../enums/Albums.enum";
 
-export class ArtCommissionDetails {
+export class CommissionDetails {
     type:string;
     description: string;
     prices: string[];
