@@ -1,6 +1,6 @@
 export enum WorkOffersEnum {
     art = "Art",
     program = 'Programming',
-    embroidery = "Embroidery",
+    embroidery = "NeedleCraft",
     live2d = "Live2d Rigging"
 }

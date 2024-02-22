@@ -21,7 +21,8 @@
         </h1>
     </div>
     <div class="row">
-        <h2 class="col-12 mb-3">Services</h2>
+        <h2 class="col-12">Services</h2>
+        <small class="mb-2">Prices are written with $, paying amount can be in USD, Euro or Pound.</small>
         <div class="row d-flex justify-content-center">
             @for(service of commStatusService.commServiceOffers; track service; let i = $index){
                 <div class="card col-md-8 col-lg-5 mb-3 mb-md-5 me-md-5 serviceCard{{i}}">
@@ -31,7 +32,7 @@
                             <div class="col-4 col-md-3 p-0 p-md-1 d-flex align-items-start">
                                 <img src="../../../assets/1.png" class="card-img" alt="...">
                             </div>
-                            <div class="col-8 col-md-9 d-flex align-items-center">
+                            <div class="col-8 col-md-9 d-flex align-items-center p-0">
                                 <div class="card-body pt-0 ">
                                     <p class="card-text">{{service.description}}</p>
                                 </div>
@@ -52,7 +53,7 @@
             @for(service of commStatusService.cheapServiceOffers; track service){
                 <div class="card col-md-7 mb-3 mb-md-5 me-md-5">
                     <div class="row">
-                        <div class="col-4 col-md-3 d-flex align-items-start mt-3">
+                        <div class="col-3 col-md-3 d-flex align-items-start mt-3">
                             <img src="../../../assets/1.png" class="card-img" alt="...">
                         </div>
                         <div class="col-8 col-md-9">

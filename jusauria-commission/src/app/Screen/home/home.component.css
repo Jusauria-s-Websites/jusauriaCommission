@@ -5,8 +5,8 @@
 }
 .carousel-image{
     width: 100%;
-   height: 12rem;
-   object-fit: cover; 
+    height: 12rem;
+    object-fit: cover; 
 }
 .carousel-item{
     width: none !important;
@@ -31,17 +31,21 @@
 .card{
     background: var(--lightLilac);
     border-radius: 15px;
+    min-height: 12rem;
 }
 .card-img{
-    height: auto !important;
     max-height: 12rem !important;
-    width: auto !important;
+    max-width: 12rem !important;
 }
 .card-body{
     min-width: fit-content;
 }
+.card-text{
+    font-size: large;
+}
 .card-footer{
     background-color: transparent !important;
+    border: none;
 }
 /*---Card Colors---*/
 /*Art*/
@@ -65,23 +69,25 @@
     color: whitesmoke;
     font-weight: bolder;
     border-radius: 10px;
-    min-height: 13rem;
 }
 /*Program*/
 .serviceCard1 {
     position: relative;
     overflow: hidden;
-    border: white 2px solid;  
     background-color: transparent;
     font-family: "Silkscreen", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-  .serviceCard1 .card-title{
+    border-radius: 0px;
+}
+.serviceCard1 .card-text{
+    font-size: medium;
+}
+.serviceCard1 .card-title{
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
-  }
+}
 .serviceCard1::before{
     content: '';
     position: absolute;
@@ -90,10 +96,10 @@
     width: 100%;
     height: 100%;
     background-image: repeating-linear-gradient( 
-        black, 
-        black 2px, 
-        #6e0d4186 2px,
-        #6e0d4186 6px);
+    black, 
+    black 2px, 
+    #6e0d4186 2px,
+    #6e0d4186 6px);
     background-color: black;
     background-repeat: repeat;
     animation: moveLines 2s linear infinite;
@@ -112,6 +118,7 @@
 .serviceCard1 .card-footer a{
     background-color:  black;
     border: white 2px solid;
+    border-radius: 0;
     color: whitesmoke;
 }
 .serviceCard1 .card-footer a:hover{
@@ -119,10 +126,42 @@
     color: whitesmoke;
 }
 .serviceCard1 .row .mt-1{
-   border: white 2px solid;
+    border: white 2px solid;
     color: whitesmoke;
+    font-weight: bolder;
+}
+/*Emb*/
+.serviceCard2{
+    background-image: linear-gradient(var(--silk)40%,var(--rosy));
+    background-repeat: repeat;  
+    background-size: 29%;
+    border: var(--sage) 2px solid;  
+    animation: moving 400s linear infinite;
+
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.serviceCard2 .card-title{
+    font-size: x-large;
+}
+.serviceCard2 .card-text{
+    font-size: 1.2rem;
+}
+.serviceCard2 .card-footer a{
+    background-color:  var(--lightPinkRed);
+    color: whitesmoke;
+}
+.serviceCard2 .card-footer a:hover{
+    background-color:  var(--pinkRed);
+    color: whitesmoke;
+}
+.serviceCard2 .row .mt-1{
+    background-color: #8b85892c;
+    border: var(--sage) 2px dashed;  
+    color: var(--tapeGray);
     font-weight: bolder;
     border-radius: 10px;
 }
-/*Emb*/
+
 /*Live2d*/
