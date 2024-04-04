@@ -1,0 +1,60 @@
+<div class="background">
+</div>
+<div class="container lobster-two-regular">
+    <div class="row">
+        <h1 class="text-center ">NeedleCrafts</h1>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Shipping Costs:</h2>
+            <ul>
+                <li>Inside the EU: 5$</li>
+                <li>Outside the EU: 10$</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Embroidery Services:</h2>
+        </div>
+        @for (item of embComms; track $index) {
+            <div class="col-12">
+                {{item.type}}
+            </div>
+            <div class="col-6">
+                {{item.description}}
+            </div>
+            <div class="col-6">
+                <ul>
+                    @for (price of item.prices; track $index) {
+                        <li>{{price}}</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Crochet Services:</h2>
+        </div>
+        @for (item of crochetComms; track $index) {
+            <div class="col-12">
+                {{item.type}}
+            </div>
+            <div class="col-6">
+                {{item.description}}
+            </div>
+            <div class="col-6">
+                <ul>
+                    @for (price of item.prices; track $index) {
+                        <li>{{price}}</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+   
+    <div class="row">
+
+    </div>
+</div>

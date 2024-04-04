@@ -1,0 +1,131 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+/* --- Variables --- */
+:root{
+    --darkPinkRed: #6e0d40;
+    --pinkRed: #B11567;
+    --lightPinkRed:#ED348F;
+    --lightLilac: #C8A2C8;
+    --lilac: #b16db1;
+    --darkLilac: rgb(170, 129, 170);
+    --mewPink: #FEC4D3;
+    --skinColor: #FAE0E0;
+    --shinyBlue: #94EDF3;
+    --darkShiny: #5da1dd;
+    --juPink: #EDA6E6;
+    /*--- Emb ---*/
+    --rosy:#f1b3b0;
+    --sage: #A3B18A;
+    --silk:#FFF8E1;
+    --tapeGray: #8B8589;
+    --powder:#B0C4DE;
+}
+/* --- Colors ---- */
+.darkRedPink{
+    color: var(--darkPinkRed);
+}
+.lilay{
+    color: var(--lilac);
+}
+
+/* --- General --- */
+body{
+    background: var(--skinColor);
+    font-family: "Merienda", cursive;
+    font-size: 15px;
+    font-weight: 400;
+}
+/* ... Space from Nav ...*/
+.navSpace{
+    margin-top: 5rem;
+    padding-top: 1rem;
+}
+.row{
+    margin: 0px -7px;
+    padding-right: 1px;
+}
+
+a{
+    color: var(--darkShiny);
+}
+a:hover{
+    color: var(--shinyBlue);
+}
+/* --- Text Size --- */
+h1{
+    font-size: 1.70em;
+    font-weight: bolder ;
+}
+h2{
+    font-size: 1.5em;
+    font-weight: bolder ;
+}
+h3{
+    font-size: 1.25em;
+    font-weight: bolder ;
+}
+h4{
+    font-size: .96em;
+    font-weight: bolder ;
+}
+
+/* --- Buttons --- */
+.btn-lilac{
+    background: var(--lilac)
+}
+.btn-lilac:hover{
+    background: var(--darkLilac)
+}
+
+/* --- List --- */
+li{
+    word-wrap: break-word;
+}
+
+/* --- Fonts --- */
+.silkscreen-regular {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.silkscreen-bold {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.press-start-2p{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lobster-two-regular {
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.lobster-two-bold {
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* --- Animations --- */
+@keyframes moving{
+    0% {
+        background-position: bottom right ;
+    }
+    100% {
+        background-position: top left;
+    }
+}
+@keyframes moveLines {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(6px);
+    }
+}
+

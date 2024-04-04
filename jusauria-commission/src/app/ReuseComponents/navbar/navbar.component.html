@@ -1,0 +1,47 @@
+<div class="fixed-top below box" >
+  <p style="color:transparent">d</p>
+</div>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-4 me-md-5" href="home">
+      <div class="row">
+        <div class="col-4 ms-1">
+          <img src="{{logoLink}}" alt="Logo" width="50" height="50" class=" d-inline-block align-text-top">
+        </div>
+        <span class="col-6 h2 align-self-center fw-bold">Jusauria</span>
+      </div>
+    </a>
+    <button class="ms-4 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item me-2 dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            @for(service of serviceOffers; track service){
+              <li><a class="dropdown-item" [routerLink]="'/'+service">{{service}}</a></li>
+            }
+          </ul>
+        </li>
+        <li class="nav-item me-2 ">
+          <a class="nav-link" href="https://www.redbubble.com/de/people/Jusauria-tryout/shop?asc=u">
+            <i class="fa-solid fa-shop"></i> Redbubble Shop
+          </a> 
+        </li>
+        <li class="nav-item me-5 ">
+          <a class="nav-link" href="https://ko-fi.com/S6S13HT1I">
+            <i class="fa-solid fa-circle-dollar-to-slot"></i> Donate on Kofi
+          </a> 
+        </li>
+        <li class="nav-item ms-md-5 justify-content-center d-flex align-items-center spinnerFrame" type="button" (click)="spin()">
+            <i class="fa-solid fa-spinner fa-spin"></i>&nbsp;&nbsp;Spin Button&nbsp;&nbsp; <i class="fa-solid fa-spinner fa-spin"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+

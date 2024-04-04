@@ -1,0 +1,36 @@
+/* --- General --- */
+.tiny{
+    font-size: .55rem;
+}
+/* --- Examples --- */
+img{
+    max-height: 12rem;
+    min-height: 12rem;
+    max-width: 268px;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    border: 15px solid;
+    border-image: url('../../../../assets/border-art.png');
+    border-image-slice: 70;
+}
+button>i{
+    color: var(--darkPinkRed);
+}
+/* --- Background --- */
+.pattern{
+    animation: moving 600s linear infinite;
+    background-image: url('../../../../assets/artPattern.png');
+    background-size: 35%;
+    background-repeat: repeat;    
+}
+.heavenSave{
+    background: var(--skinColor);
+}
+
+@media only screen and (min-width: 600px) {
+    .pattern {
+        padding: 0px 20%;
+    }
+}
+

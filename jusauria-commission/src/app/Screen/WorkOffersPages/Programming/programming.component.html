@@ -1,0 +1,68 @@
+<div class="flex-container">
+    <div class="digital">
+    </div>
+    <div class="container silkscreen-regular mt-1">
+        <div class="juflair_flying juflair_spe_slow juflair_rep_inf ">
+            <h1 class="text-center press-start-2p">Prog<span class="juflair_blink2_Delayed juflair_rep_inf">r</span>amm<span class="juflair_blink1_Delayed juflair_rep_inf">i</span>ng</h1>
+        </div>
+        <div class="row noBorder d-flex justify-content-center">
+            <div class="col-md-4">
+                <div class="row m-3">
+                    <div class="col-12">
+                        <div class="row noBorder d-flex justify-content-center">
+                            <h2 class="col-5 col-md-4">Price:</h2>
+                            <p class="col-2 col-md-1 h4">$</p>
+                        </div>
+                        <ul>
+                            <li>Starting pay: Depending on Type</li>
+                            <li>Hour rate: 10$</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row noBorder d-flex justify-content-center">
+            <div class="col-md-7 p-md-0">
+                <div class="row mt-2 mt-md-0">
+                    <h2>Types of Comm.</h2>
+                    @for (item of commType; track $index) {
+                        <h3 class="text-decoration-underline">{{item.type}}:</h3>
+                        <p>{{item.description}}</p>
+                        @for (price of item.prices; track $index) {
+                            <p> <span class="juflair_blink juflair_rep_inf">▶</span>   {{price}}</p>
+                        }
+                    }
+                </div>
+                <div class="row" style="background-color: var(--pinkRed); ">
+                    <div class="col-12 p-0 pb-2">
+                        <span class="text-start juflair_typing juflair_rep_inf" style="--n:120;--c:white; white-space: pre;word-wrap: break-word; font-size: 13px;">
+                            def send_love():<br>
+                            &nbsp;print("Sending love to you ❤️")<br>
+                            <br>
+                            # Spreading love <3 <br>
+                            send_love()<br>
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row m-3 m-md-0 mt-2">
+                    <h3>Languages known:</h3>
+                    @for (item of languages; track $index) {
+                        <p><span class="juflair_blink juflair_rep_inf">▶</span> {{item}}</p>
+                    }
+                </div>
+                <div class="row m-md-0 mt-2 mt-md-2">
+                    <h2>Examples:</h2>
+                    <p><span class="juflair_blink juflair_rep_inf">▶</span> <a href="https://github.com/Jusauria">Github Page</a></p>
+                    @for (example of examples; track $index) {
+                        <p><span class="juflair_blink juflair_rep_inf">▶</span> {{example}}</p>
+                    }
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+

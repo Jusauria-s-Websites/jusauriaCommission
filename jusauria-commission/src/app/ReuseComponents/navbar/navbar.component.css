@@ -1,0 +1,47 @@
+/* --- Nav Bar --- */
+.navbar{
+    margin-top: 0rem;
+    background-color: var(--pinkRed);
+}
+nav *{
+    color: white
+}
+
+/* --- Spinner --- */
+.spinnerFrame{
+    border: 2px solid var(--darkPinkRed);
+    padding: 6px;
+    border-radius: 10px;
+    background-color: var(--darkPinkRed) ;
+}
+/* --- Drop down --- */
+.dropdown-menu{
+    background-color: var(--pinkRed);
+    color: white;
+    border-color:var(--juPink) ;
+}
+.dropdown-item:hover{
+    background-color: var(--darkPinkRed);
+}
+
+/* --- Selection*/
+.navbar-nav .nav-link.show{
+    color:var(--juPink)
+}
+::after{
+    color:var(--juPink)
+}
+
+/* ---- Wave ----*/
+.below{
+    padding-top: 3.5rem;
+    background-size: 20px 100%;
+    background-color: var(--pinkRed);
+}
+.box {
+    --mask:
+      radial-gradient(2.9em at 50% calc(100% - 3.00em),#000000 99%,#00000000 100%) calc(50% - 2em) 0/4em 100%,
+      radial-gradient(2.24em at 50% calc(100% + 2.00em),#00000000 99%,#000000 100%) 50% calc(100% - 1em)/4em 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }

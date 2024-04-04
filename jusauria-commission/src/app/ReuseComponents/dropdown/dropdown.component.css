@@ -1,0 +1,19 @@
+.dropdown-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--lightLilac);
+}
+
+.dropdown-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid var(--lightLilac);
+    background-color: rgba(249, 156, 218, 0.175);
+}
+
+.dropdown-content.show {
+    display: block;
+}
+.selected{
+    color: whitesmoke
+}

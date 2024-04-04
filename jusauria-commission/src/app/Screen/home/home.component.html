@@ -1,0 +1,75 @@
+
+<div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        @for (item of albumImages.get('home'); track item; let imageIndex=$index ) {
+            <button type="button" data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="imageIndex" class="active" aria-current="true" [attr.aria-label]="'Slide '+imageIndex"></button>
+        }
+    </div>
+    <div class="carousel-inner">
+        @for (items of  albumImages.get('home'); track items; let imageIndex=$index) {
+            <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
+                <img src="{{items.link}}" class="carousel-image" alt="...">
+            </div>
+        }
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        <h1 class="text-center commission" [ngClass]="{'commOpen': commStatusService.commState , 'commClosed': !commStatusService.commState}">
+            {{ commStatusService.getCommStatusText() }}
+        </h1>
+    </div>
+    <div class="row">
+        <h2 class="col-12">Services</h2>
+        <small class="mb-2">Prices are written with $, paying amount can be in USD, Euro or Pound.</small>
+        <div class="row d-flex justify-content-center">
+            @for(service of commStatusService.commServiceOffers; track service; let i = $index){
+                <div class="card col-md-8 col-lg-5 mb-3 mb-md-5 me-md-5 serviceCard{{i}}">
+                    <div class="row d-flex justify-content-center" >
+                        <div class="row mt-1 pb-3" >
+                            <h3 class="card-title text-center mt-2 align-self-center" [ngClass]="{'juflair_blink2_Delayed juflair_rep_inf juflair_spe_slowmotion':i==1}">{{service.title}}</h3>
+                            <div class="col-4 col-md-3 p-0 p-md-1 d-flex align-items-start">
+                                <img src="../../../assets/1.png" class="card-img" alt="...">
+                            </div>
+                            <div class="col-8 col-md-9 d-flex align-items-center p-0">
+                                <div class="card-body pt-0 ">
+                                    <p class="card-text">{{service.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="card-footer text-end">
+                            <a href="./{{service.mainPage}}" class="btn btn-lilac">More Details ></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="col-12 mt-3 mb-3">Cheap Services</h2>
+        <div class="row d-flex justify-content-center">
+            @for(service of commStatusService.cheapServiceOffers; track service){
+                <div class="card col-md-7 mb-3 mb-md-5 me-md-5">
+                    <div class="row">
+                        <div class="col-3 col-md-3 d-flex align-items-start mt-3">
+                            <img src="../../../assets/1.png" class="card-img" alt="...">
+                        </div>
+                        <div class="col-8 col-md-9">
+                            <div class="card-body ">
+                                <h3 class="card-title">{{service.title}}</h3>
+                            </div>
+                        </div>
+                        <div class="card-body ">
+                            <p class="card-text">{{service.description}}</p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="{{service.mainPage}}" class="btn btn-lilac">More Details ></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

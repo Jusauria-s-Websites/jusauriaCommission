@@ -1,0 +1,171 @@
+<div class=" pattern">
+    <div class="container heavenSave">
+        <div class="row pt-3">
+            <h1 class="col-12 col-md-5 text-center mt-2">Art Commission</h1>
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-md-center"> Basics</h2>
+                        <ul>
+                            <li>Each character additional 50% </li>
+                            <li>NSFW Art: +20% of sfw price </li>
+                            <li>Lineart default black -> colored: +2$</li>
+                            <li> Default canvas size: 1000x1000 <small> (commission depending)</small> </li>
+                        </ul>
+                        <small class="tiny">NSFW examples can be shown in private messages through discord</small>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row d-md-flex justify-content-center">
+                <div class="col-7 col-md-4 text-success d-md-flex justify-content-md-center">
+                    <h3>Do</h3>
+                    <ul>
+                        <li>Humans</li>
+                        <li>Humanoid</li>
+                        <li>Furries/Feral</li>
+                        <li>NSFW</li>
+                        <li>Gore</li>
+                    </ul>
+                </div>
+                <div class="col-5 col-md-4 text-danger d-md-flex justify-content-md-center">
+                    <h3>Don't</h3>
+                    <ul>
+                        <li>Realism</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Types of Commission</h2>
+                @for (types of typeBasic; track types; let typeIndex=$index ) {
+                    <div class="row mt-3">
+                        <h3 class="text-center text-md-start col-12 mb-3">{{types.type}}</h3>
+                        <div id="{{types.type}}" class="carousel slide col-md-5">
+                            <div class="carousel-inner align-items-center">                          
+                                @for (items of  albumImages.get(types.type); track items; let imageIndex=$index) {
+                                    <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
+                                        <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+                                    </div>
+                                }
+                                <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#'+types.type"  data-bs-slide="prev">
+                                    <i class="fa-solid fa-chevron-left fa-2x"></i>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#'+types.type" data-bs-slide="next">
+                                    <i class="fa-solid fa-chevron-right fa-2x"></i>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-2 col-md-6">
+                            @for (item of types.prices; track $index) {
+                                <div class="ms-2 ms-md-5 ">
+                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{item}}</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+                <hr>
+                @for (types of special; track types; let indexType=$index) {
+                    <div class="row mt-3 mb-3">
+                        <h3 class="text-center text-md-start col-12 mb-">{{types.type}}</h3>
+                        <div id="{{types.type}}" class="carousel slide col-md-5">
+                            <div class="carousel-inner align-items-center">                        
+                                @for (items of  albumImages.get(types.type); track items; let imageIndex=$index) {
+                                    <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
+                                        <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+                                    </div>
+                                }
+                                <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#'+types.type"  data-bs-slide="prev">
+                                    <i class="fa-solid fa-chevron-left fa-2x"></i>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#'+types.type" data-bs-slide="next">
+                                    <i class="fa-solid fa-chevron-right fa-2x"></i>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-2 col-md-6">
+                            @for (item of types.prices; track $index) {
+                                <div class="ms-2 ms-md-4 ">
+                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{item}}</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="row">
+            <h2>Background Types</h2>
+            <div class="row mt-3 mb-3">
+                @for (types of backgrounds; track types; let typeIndex=$index ) {
+                    <div class="col-md-6">
+                        <h3 class="text-center mb-3">{{types.type}}</h3>
+                        <div id="{{types.type}}" class="carousel slide">
+                            <div class="carousel-inner align-items-center">                        
+                                @for (items of albumImages.get(types.type); track items; let imageIndex=$index) {
+                                    <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
+                                        <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+                                    </div>
+                                }
+                                <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#'+types.type"  data-bs-slide="prev">
+                                    <i class="fa-solid fa-chevron-left fa-2x"></i>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#'+types.type" data-bs-slide="next">
+                                    <i class="fa-solid fa-chevron-right fa-2x"></i>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            @for (item of types.prices; track $index) {
+                                <div class="ms-4 ms-md-5 ps-5">
+                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{item}}</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="row mb-3">
+                <h2>Cheap Commission - YCH </h2>
+                <p>YCH - Short for Your Character Here. It's a simple commission type where the pose and enviroment is already set and the artist just needs to put your character in the picture.</p>
+                <div class="row mt-3 mb-3">
+                    <div class="col-md-6">
+                        <div id="ych" class="carousel slide">
+                            <div class="carousel-inner align-items-center">                         
+                                @for (items of albumImages.get('ych'); track items; let imageIndex=$index) {
+                                    <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
+                                        <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+                                    </div>
+                                }
+                                <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#ych'"  data-bs-slide="prev">
+                                    <i class="fa-solid fa-chevron-left fa-2x"></i>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#ych'" data-bs-slide="next">
+                                    <i class="fa-solid fa-chevron-right fa-2x"></i>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-2 d-flex align-items-center">
+                        <div class="row">
+                            <p class="col-6 m-0 col-md-12 text-decoration-underline">All Open YCH are listed here: </p>
+                            <a class="col-6 align-self-center" href="https://www.deviantart.com/jusauria/gallery/78700756/ych"><button>YCH LIST</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
