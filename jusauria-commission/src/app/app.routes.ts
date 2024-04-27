@@ -3,7 +3,7 @@ import { HomeComponent } from './Screen/home/home.component';
 import { WorkOffersEnum } from './Pojos/enums/work-offers-enum';
 import { ArtComponent } from './Screen/WorkOffersPages/Art/art.component';
 import { EmbroideryComponent } from './Screen/WorkOffersPages/Embroidery/embroidery.component';
-import { VTuberRiggingComponent } from './Screen/WorkOffersPages/Vtuber-Rigging/vtuber-rigging.component';
+import { VTuberRiggingComponent } from './Screen/WorkOffersPages/Vtuber/vtuber.component';
 import { ProgrammingComponent } from './Screen/WorkOffersPages/Programming/programming.component';
 import { AboutProfileComponent } from './Screen/about-profile/about-profile.component';
 import { TermsComponent } from './Screen/terms/terms.component';

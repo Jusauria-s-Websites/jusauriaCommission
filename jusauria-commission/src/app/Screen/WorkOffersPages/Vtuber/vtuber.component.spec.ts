@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VTuberRiggingComponent } from './vtuber-rigging.component';
+import { VTuberRiggingComponent } from './vtuber.component';
 
 describe('VTuberRiggingComponent', () => {
   let component: VTuberRiggingComponent;

@@ -9,10 +9,11 @@ export class EmbServiceService {
   
   constructor() { }
   static embCommType: CommissionDetails[] = [
-    new CommissionDetails("Custom Patches","Those are handmade Patches with just needlework or a sewing machine. More than 3 colors will cost slightly extra.",[
-      "Price: 7$ ",
-      "color adding: + 0.15$",
-      "Velcro: + 1$",
+    new CommissionDetails("Custom Patches 7$","Our custom patches are carefully crafted by hand or with a sewing machine. For designs with more than three colors, there may be a small additional fee.",[
+      "additional colors: + 0.25$",
+      "Velcro Backing: + 1$",
+      "Sticky Backing: +1$",
+      "Safety Pin Backing: 0.5$"
     ],Albums.programCommTypeIcon),
     new CommissionDetails("Wall Art","Circle 30cm border.",[
       "Price: 10$",

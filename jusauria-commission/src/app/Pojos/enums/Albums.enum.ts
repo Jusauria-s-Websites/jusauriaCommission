@@ -22,7 +22,10 @@ export enum Albums {
     VTuberAlbum="",
 
      /* --- Embroidery and Crochet --- */
-    EmbroideryAlbum="",
+    EmbroideryServiceAlbum="",
+    EmbroideryExamples="",
+    CrochetServiceAlbum="",
+    CrochetExamples="",
 
     /* --- Programming --- */
     programCommTypeIcon =""

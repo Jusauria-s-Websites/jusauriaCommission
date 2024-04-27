@@ -6,3 +6,9 @@
     position: fixed;
     margin-top: -5rem;
 }
+
+.borderCircle{
+    border: 2px dashed black;
+    border-radius: 50px;
+    padding: 15px;
+}

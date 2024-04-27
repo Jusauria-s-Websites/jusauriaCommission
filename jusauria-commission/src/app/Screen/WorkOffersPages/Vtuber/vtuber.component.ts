@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-vtuber-rigging',
   standalone: true,
   imports: [],
-  templateUrl: './vtuber-rigging.component.html',
-  styleUrl: './vtuber-rigging.component.css'
+  templateUrl: './vtuber.component.html',
+  styleUrl: './vtuber.component.css'
 })
 export class VTuberRiggingComponent {
 
