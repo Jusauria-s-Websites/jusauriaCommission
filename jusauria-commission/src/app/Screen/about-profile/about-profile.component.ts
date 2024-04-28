@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../ReuseComponents/navbar/navbar.component';
 import { FooterComponent } from '../../ReuseComponents/footer/footer.component';
 
@@ -10,10 +10,10 @@ import { FooterComponent } from '../../ReuseComponents/footer/footer.component';
   templateUrl: './about-profile.component.html',
   styleUrl: './about-profile.component.css'
 })
-export class AboutProfileComponent {
+export class AboutProfileComponent{
   age: number;
   constructor(){
-    if(new Date().getMonth()<4){
+    if(new Date().getMonth()<3){
       this.age=new Date().getFullYear()-2006;
     }else{
       this.age=new Date().getFullYear()-2005;

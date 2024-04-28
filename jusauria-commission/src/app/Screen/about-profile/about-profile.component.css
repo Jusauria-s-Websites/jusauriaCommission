@@ -1,0 +1,28 @@
+/* --- Basics --- */
+img{
+    width:9rem ;
+    height: fit-content;
+}
+button{
+    border-radius: 15px;
+}
+
+/* --- Jusauria Info main*/
+.main{
+    border-bottom: palevioletred solid 3px;
+}
+.weak{
+    border-left: palevioletred solid 3px ;
+    background-color: var(--mewPink);
+    color: rgb(179, 74, 109);
+}
+.strong{
+    border-right: palevioletred solid 3px ;
+    background-color: var(--mewPink);
+    color: rgb(179, 74, 109);
+}
+.uppies{
+    border-top: var(--lightLilac) double 10px ;
+    background-color: var(--lilac);
+    color: whitesmoke;
+}
