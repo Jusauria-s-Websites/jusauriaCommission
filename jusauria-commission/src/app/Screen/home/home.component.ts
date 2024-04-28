@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../ReuseComponents/navbar/navbar.component';
 import { CommStatusService } from '../../Services/CommStatus/comm-status.service';
 import { CommonModule } from '@angular/common';
@@ -15,18 +15,20 @@ import { ImgurAPIService } from '../../Services/ImgurService/imgurAPI.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   commStatusService: CommStatusService= new CommStatusService();
   albumImages: Map<string,AlbumImage[]>= new Map();
   
   
   constructor(private imgurService: ImgurAPIService){
-    
     imgurService.getAlbumImages(Albums.homeAlbum).then(item=>{
       this.albumImages.set('home',item);
     })
-    imgurService.getAlbumImages(Albums.ServiceIconAlbum).then(item=>{
+    imgurService.getAlbumImages(Albums.EmoteAlbum).then(item=>{
       this.albumImages.set('icons',item);
     })
+  }
+  ngOnInit(): void {
+    console.log(this.albumImages.get('icons'))
   }
 }
