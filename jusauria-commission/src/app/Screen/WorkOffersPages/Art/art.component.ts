@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../ReuseComponents/navbar/navbar.component';
 import { FooterComponent } from '../../../ReuseComponents/footer/footer.component';
 import { DropdownComponent } from '../../../ReuseComponents/dropdown/dropdown.component';
@@ -16,7 +16,7 @@ import { Albums } from '../../../Pojos/enums/Albums.enum';
   templateUrl: './art.component.html',
   styleUrl: './art.component.css'
 })
-export class ArtComponent {
+export class ArtComponent implements OnInit{
   typeBasic: CommissionDetails[];
   special: CommissionDetails[];
   backgrounds: CommissionDetails[];
@@ -46,6 +46,8 @@ export class ArtComponent {
       imgurService.getAlbumImages(Albums.YCHAlbum).then(item=>{
         this.albumImages.set('ych',item);
       })
-    
+  }
+  ngOnInit(): void {
+   console.log("Bleep")
   }
 }
