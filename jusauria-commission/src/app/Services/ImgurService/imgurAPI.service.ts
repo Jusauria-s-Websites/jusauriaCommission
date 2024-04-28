@@ -33,7 +33,6 @@ export class ImgurAPIService {
     });
   }
     getLogoImage():Promise<string>{
-      console.log("My try");
       return new Promise((resolve, reject)=>{
         this.http.get<any>(this.apiUrlBase+`account/Jusauria/image/TK0XLod`, {
           headers: {'Authorization': `Bearer ${this.accessToken}`}
