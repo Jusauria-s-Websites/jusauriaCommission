@@ -19,7 +19,7 @@ export class ProgrammingComponent {
     '3 Opera Mods: made 3 custom opera mods for friends and myself',
     'worked with Android Studio with Java as language',
     'experiences with Hybrid-Apps and frameworks like React and Angular',
-    'Animation CSS Library: Juflair'
+    'Animation CSS Library: Juflair[destroyed...]'
   ]
   constructor(){
     this.commType= ProgramServiceService.programCommType;

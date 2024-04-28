@@ -29,9 +29,7 @@
                     <div class="row d-flex justify-content-center" >
                         <div class="row mt-1 pb-3" >
                             <h3 class="card-title text-center mt-2 align-self-center" 
-                            [ngClass]="[
-                                (i === 1) ? 'juflair_blink2_Delayed juflair_rep_inf juflair_spe_slowmotion' : ''
-                            ]"> {{service.title}} </h3>
+                            > {{service.title}} </h3>
                             <div class="col-4 col-md-3 p-0 p-md-1 d-flex align-items-start">
                                 <img [src]="service.status? albumImages.get('icons')?.at(i*2):albumImages.get('icons')?.at(i*2+1)" class="card-img" alt="...">
                             </div>
