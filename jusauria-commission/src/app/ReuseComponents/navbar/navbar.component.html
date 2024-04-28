@@ -21,8 +21,12 @@
             Services
           </a>
           <ul class="dropdown-menu">
-            @for(service of serviceOffers; track service){
-              <li><a class="dropdown-item" [routerLink]="'/'+service">{{service}}</a></li>
+            @for(service of serviceOffers; track service; let i= $index){
+              <li><a class="dropdown-item" [routerLink]="'/'+service">{{service}} 
+                @if(!serviceStatus[i].status){
+                  <span> [Closed]</span>
+                }
+              </a></li>
             }
           </ul>
         </li>

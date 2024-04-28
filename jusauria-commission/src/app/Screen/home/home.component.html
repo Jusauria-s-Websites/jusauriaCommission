@@ -16,7 +16,7 @@
 
 <div class="container">
     <div class="row mt-4">
-        <h1 class="text-center commission" [ngClass]="{'commOpen': commStatusService.commState , 'commClosed': !commStatusService.commState}">
+        <h1 class="text-center commission" [ngClass]="{'commOpen': commStatusService.commState==0 , 'commClosed': commStatusService.commState==1,'commPart': commStatusService.commState==2 }">
             {{ commStatusService.getCommStatusText() }}
         </h1>
     </div>
@@ -28,9 +28,12 @@
                 <div class="card col-md-8 col-lg-5 mb-3 mb-md-5 me-md-5 serviceCard{{i}}">
                     <div class="row d-flex justify-content-center" >
                         <div class="row mt-1 pb-3" >
-                            <h3 class="card-title text-center mt-2 align-self-center" [ngClass]="{'juflair_blink2_Delayed juflair_rep_inf juflair_spe_slowmotion':i==1}">{{service.title}}</h3>
+                            <h3 class="card-title text-center mt-2 align-self-center" 
+                            [ngClass]="[
+                                (i === 1) ? 'juflair_blink2_Delayed juflair_rep_inf juflair_spe_slowmotion' : ''
+                            ]"> {{service.title}} </h3>
                             <div class="col-4 col-md-3 p-0 p-md-1 d-flex align-items-start">
-                                <img src="../../../assets/1.png" class="card-img" alt="...">
+                                <img [src]="service.status? albumImages.get('icons')?.at(i*2):albumImages.get('icons')?.at(i*2+1)" class="card-img" alt="...">
                             </div>
                             <div class="col-8 col-md-9 d-flex align-items-center p-0">
                                 <div class="card-body pt-0 ">
@@ -40,32 +43,8 @@
                         </div>
                        
                         <div class="card-footer text-end">
-                            <a href="./{{service.mainPage}}" class="btn btn-lilac">More Details ></a>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-    <div class="row">
-        <h2 class="col-12 mt-3 mb-3">Cheap Services</h2>
-        <div class="row d-flex justify-content-center">
-            @for(service of commStatusService.cheapServiceOffers; track service){
-                <div class="card col-md-7 mb-3 mb-md-5 me-md-5">
-                    <div class="row">
-                        <div class="col-3 col-md-3 d-flex align-items-start mt-3">
-                            <img src="../../../assets/1.png" class="card-img" alt="...">
-                        </div>
-                        <div class="col-8 col-md-9">
-                            <div class="card-body ">
-                                <h3 class="card-title">{{service.title}}</h3>
-                            </div>
-                        </div>
-                        <div class="card-body ">
-                            <p class="card-text">{{service.description}}</p>
-                        </div>
-                        <div class="card-footer text-end">
-                            <a href="{{service.mainPage}}" class="btn btn-lilac">More Details ></a>
+                            <a [href]="service.status ? './' + service.mainPage : '#'" class="btn" [ngClass]="service.status?'':'disabled'">More Details ></a>
+
                         </div>
                     </div>
                 </div>

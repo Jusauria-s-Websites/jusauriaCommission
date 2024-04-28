@@ -21,6 +21,9 @@
 .commClosed{
     color:red
 }
+.commPart{
+    color:orange
+}
 
 /* --- Commission --- */
 .commission{
@@ -48,6 +51,9 @@
     border: none;
 }
 /*---Card Colors---*/
+.card-footer .disabled{
+    opacity: 45%;
+}
 /*Art*/
 .serviceCard0{
     background-image: url('../../../assets/artPattern.png');
@@ -60,10 +66,12 @@
     background-color:  var(--lightPinkRed);
     color: whitesmoke;
 }
+
 .serviceCard0 .card-footer a:hover{
     background-color:  var(--pinkRed);
     color: whitesmoke;
 }
+
 .serviceCard0 .row .mt-1{
     background-color: #dc4e9aeb;
     color: whitesmoke;

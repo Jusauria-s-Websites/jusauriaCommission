@@ -25,8 +25,8 @@ export class HomeComponent {
     imgurService.getAlbumImages(Albums.homeAlbum).then(item=>{
       this.albumImages.set('home',item);
     })
-    /*imgurService.getAlbumImages(Albums.ServiceIconAlbum).then(item=>{
+    imgurService.getAlbumImages(Albums.ServiceIconAlbum).then(item=>{
       this.albumImages.set('icons',item);
-    })*/
+    })
   }
 }
