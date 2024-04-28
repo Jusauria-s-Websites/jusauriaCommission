@@ -9,7 +9,7 @@
         <div class="col-7">
             <div class="row d-flex justify-content-end">
                 <div class="col-12 mb-2 text-end"><a href="terms">Terms and Services</a></div>
-                <div class="col-12 mb-2 text-end "><a href="/about">About Jusauria</a></div>
+                <div class="col-12 mb-2 text-end "><a  [routerLink]="'/about'">About Jusauria</a></div>
                 @for (social of currentSocials; track $index) {
                     <div class="col-2 col-md-1">
                         <a href="{{social.url}}"> <i class="fa-brands {{social.icon}}" ></i></a>
