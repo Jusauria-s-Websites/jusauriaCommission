@@ -15,7 +15,7 @@ import { ImgurAPIService } from '../../Services/ImgurService/imgurAPI.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent{
   commStatusService: CommStatusService= new CommStatusService();
   albumImages: Map<string,AlbumImage[]>= new Map();
   
@@ -27,8 +27,5 @@ export class HomeComponent implements OnInit{
     imgurService.getAlbumImages(Albums.ServiceIconAlbum).then(item=>{
       this.albumImages.set('icons',item);
     })
-  }
-  ngOnInit(): void {
-    console.log(this.albumImages.get('icons'))
   }
 }
