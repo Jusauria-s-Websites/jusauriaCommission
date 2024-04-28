@@ -16,7 +16,6 @@ export class ImgurAPIService {
   getAlbumImages(album:string): Promise<AlbumImage[]>{    
     return new Promise((resolve,reject)=>{this.http.get<any>(this.apiUrlBase+`account/Jusauria/album/${album}`, {
       headers: {
-        'user-agent': 'curl/7.84.0',
         'Authorization': `Bearer ${this.accessToken}`
       }
     }).subscribe(result=>{
