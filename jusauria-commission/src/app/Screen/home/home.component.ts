@@ -6,7 +6,6 @@ import { FooterComponent } from '../../ReuseComponents/footer/footer.component';
 import { AlbumImage } from '../../Pojos/Objects/AlbumImage';
 import { Albums } from '../../Pojos/enums/Albums.enum';
 import { ImgurAPIService } from '../../Services/ImgurService/imgurAPI.service';
-import { FirstjoinService } from '../../Services/FirstJoinService/firstjoin.service';
 
 
 @Component({
@@ -16,12 +15,12 @@ import { FirstjoinService } from '../../Services/FirstJoinService/firstjoin.serv
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent{
   commStatusService: CommStatusService= new CommStatusService();
   albumImages: Map<string,AlbumImage[]>= new Map();
   
   
-  constructor(private imgurService: ImgurAPIService, private firstjoin: FirstjoinService){
+  constructor(private imgurService: ImgurAPIService){
     imgurService.accessAlbum(Albums.homeAlbum).then(item=>{
       this.albumImages.set('home',item);
     })
@@ -29,12 +28,5 @@ export class HomeComponent implements OnInit{
       this.albumImages.set('icons',item);
     })
   }
-  ngOnInit(): void {
-    this.firstjoin.sharedVariable$.subscribe(value => {
-      console.log(value)
-      if(value){
-        localStorage.clear()
-        this.firstjoin.setSharedVariable(false);
-    }});
-  }
+
 }

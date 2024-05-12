@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, NavigationStart, provideRouter, Router, RouteReuseStrategy, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './ReuseComponents/navbar/navbar.component';
@@ -24,7 +24,13 @@ import { routes } from './app.routes';
     },
  ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'jusauria-commission';
-
+  
+  ngOnInit(): void {
+    if(window.location.href=="https://jusauria-s-websites.github.io/jusauriaCommission" || window.location.href=="http://localhost:4200/"){
+      localStorage.clear
+      console.log("cleared")
+    } 
+  }
 }
