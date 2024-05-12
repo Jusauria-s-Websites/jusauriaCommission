@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   title = 'jusauria-commission';
   
   ngOnInit(): void {
-    if(window.location.href=="https://jusauria-s-websites.github.io/jusauriaCommission" || window.location.href=="http://localhost:4200/"){
+    if(window.location.href=="https://jusauria-s-websites.github.io/jusauriaCommission/" || window.location.href=="http://localhost:4200/"){
       localStorage.clear
       console.log("cleared")
     } 
