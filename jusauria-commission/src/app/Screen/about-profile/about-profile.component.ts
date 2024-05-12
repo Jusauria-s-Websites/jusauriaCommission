@@ -24,7 +24,7 @@ export class AboutProfileComponent{
     }
 
     //picture inside the serviceIcons
-    imgurService.accessAlbumAlbumImages(Albums.ServiceIconAlbum).then(item=>{
+    imgurService.accessAlbum(Albums.ServiceIconAlbum).then(item=>{
       this.picture=item.at(item.length-1)?.link;
     })
   }

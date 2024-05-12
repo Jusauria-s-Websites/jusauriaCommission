@@ -29,21 +29,21 @@ export class ArtComponent implements OnInit{
 
     
     for(let i =0; i<this.special.length;i++){
-      imgurService.accessAlbumAlbumImages(this.special[i].artExampleAlbum).then(item=>{
+      imgurService.accessAlbum(this.special[i].artExampleAlbum).then(item=>{
         this.albumImages.set(this.special[i].type,item);
       })
     }
     for(let i =0; i<this.typeBasic.length;i++){
-      imgurService.accessAlbumAlbumImages(this.typeBasic[i].artExampleAlbum).then(item=>{
+      imgurService.accessAlbum(this.typeBasic[i].artExampleAlbum).then(item=>{
         this.albumImages.set(this.typeBasic[i].type,item);
       })
     }
     for(let i =0; i<this.backgrounds.length;i++){
-      imgurService.accessAlbumAlbumImages(this.backgrounds[i].artExampleAlbum).then(item=>{
+      imgurService.accessAlbum(this.backgrounds[i].artExampleAlbum).then(item=>{
         this.albumImages.set(this.backgrounds[i].type,item);
       })
     }
-      imgurService.accessAlbumAlbumImages(Albums.YCHAlbum).then(item=>{
+      imgurService.accessAlbum(Albums.YCHAlbum).then(item=>{
         this.albumImages.set('ych',item);
       })
   }
