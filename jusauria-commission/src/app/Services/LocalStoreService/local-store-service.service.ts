@@ -21,7 +21,6 @@ export class LocalStoreServiceService {
       let array =localStorage.getItem(folderName)
 
       if(array){
-        console.log("Access from local")
         resolve(JSON.parse(array));
       } 
       else reject();

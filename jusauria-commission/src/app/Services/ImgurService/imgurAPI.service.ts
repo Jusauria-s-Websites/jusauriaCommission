@@ -39,7 +39,6 @@ export class ImgurAPIService {
         const albumImages: AlbumImage[] = result.data.images.map((image: any) => {
           return new AlbumImage(image.link, image.name);
         });
-        console.log("Got Images")
         resolve(albumImages);
         this.localService.addToStore(album, albumImages);
       }else{
