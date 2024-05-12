@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { provideRouter, RouteReuseStrategy, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './ReuseComponents/navbar/navbar.component';
@@ -26,4 +26,11 @@ import { routes } from './app.routes';
 })
 export class AppComponent {
   title = 'jusauria-commission';
+
+  //clears localstorage after the page is gone
+  @HostListener('window:beforeunload', ['$event'])
+  clearLocalStorage(event: any) {
+    console.log("cleared")
+    localStorage.clear();
+  }
 }
