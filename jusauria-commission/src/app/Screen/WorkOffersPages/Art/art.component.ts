@@ -16,7 +16,7 @@ import { Albums } from '../../../Pojos/enums/Albums.enum';
   templateUrl: './art.component.html',
   styleUrl: './art.component.css'
 })
-export class ArtComponent implements OnInit{
+export class ArtComponent{
   typeBasic: CommissionDetails[];
   special: CommissionDetails[];
   backgrounds: CommissionDetails[];
@@ -27,27 +27,26 @@ export class ArtComponent implements OnInit{
     this.special=OfferServiceService.specialArtComms;
     this.backgrounds=OfferServiceService.backgroundType;
 
-    
-    for(let i =0; i<this.special.length;i++){
-      imgurService.accessAlbum(this.special[i].artExampleAlbum).then(item=>{
-        this.albumImages.set(this.special[i].type,item);
-      })
+    if(window.location.href!="http://localhost:4200/Art"){
+      for(let i =0; i<this.typeBasic.length;i++){
+        imgurService.accessAlbum(this.typeBasic[i].artExampleAlbum).then(item=>{
+          this.albumImages.set(this.typeBasic[i].type,item);
+        })
+      }
+      for(let i =0; i<this.special.length;i++){
+        imgurService.accessAlbum(this.special[i].artExampleAlbum).then(item=>{
+          this.albumImages.set(this.special[i].type,item);
+        })
+      }
+      for(let i =0; i<this.backgrounds.length;i++){
+        imgurService.accessAlbum(this.backgrounds[i].artExampleAlbum).then(item=>{
+          this.albumImages.set(this.backgrounds[i].type,item);
+        })
+      }
+        imgurService.accessAlbum(Albums.YCHAlbum).then(item=>{
+          this.albumImages.set('ych',item);
+        })
     }
-    for(let i =0; i<this.typeBasic.length;i++){
-      imgurService.accessAlbum(this.typeBasic[i].artExampleAlbum).then(item=>{
-        this.albumImages.set(this.typeBasic[i].type,item);
-      })
-    }
-    for(let i =0; i<this.backgrounds.length;i++){
-      imgurService.accessAlbum(this.backgrounds[i].artExampleAlbum).then(item=>{
-        this.albumImages.set(this.backgrounds[i].type,item);
-      })
-    }
-      imgurService.accessAlbum(Albums.YCHAlbum).then(item=>{
-        this.albumImages.set('ych',item);
-      })
-  }
-  ngOnInit(): void {
-   console.log("Bleep")
+   
   }
 }
