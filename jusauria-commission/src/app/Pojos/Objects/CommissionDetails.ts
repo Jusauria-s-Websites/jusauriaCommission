@@ -3,13 +3,13 @@ import { Albums } from "../enums/Albums.enum";
 export class CommissionDetails {
     type:string;
     description: string;
-    prices: string[];
+    prices: any[][];
     artExampleAlbum: Albums;
 
     constructor(
         type:string,
         description: string,
-        prices: string[],
+        prices: any[][],
         artAlbum:Albums
     ){
         this.type=type;
