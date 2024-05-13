@@ -32,5 +32,8 @@ button>i{
     .pattern {
         padding: 0px 20%;
     }
+    .cornerFloat{
+        right: 14rem;
+    }
 }
 

@@ -1,0 +1,88 @@
+
+/* --- Animation --- */
+.dropDown{
+    animation: dropDown 1.5s forwards;
+}
+.goUp{
+    animation: goUp 1.5s forwards;
+}
+.dropUp{
+    animation: dropUp 2s forwards;
+}
+.goDown{
+    animation: goDown 2s forwards;
+}
+/* --- Calculator --- */
+.cornerFloat{
+    position: fixed;
+    right: 1rem;
+    background-color: var(--lightLilac);
+    color: var(--darkPinkRed);
+    border: 1px solid white;
+    padding: 1.3rem .5rem;
+    border-radius: 10px;
+    
+}
+
+#calculator{
+    max-height: 85% !important;
+}
+.calculator{
+    background-color: var(--lightLilac);
+    margin-bottom: 0.30rem;
+    z-index: 3;
+    color: var(--darkPinkRed);
+}
+.calculator button{
+    background-color:var(--lilac);
+    border: none;
+}
+.result{
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px double whitesmoke;
+}
+.card{
+    background-color: transparent;
+    border: none;
+}
+.card-header-tabs{
+    margin-bottom: 0;
+}
+.card-header-tabs .nav-link.active{
+    background-color: var(--lightLilac);
+    border: none;
+    color: whitesmoke;
+}
+.card-header-tabs .nav-link{
+    background-color: var(--lilac);
+    border: none;
+    color: whitesmoke;
+    margin-top: .7rem;
+}
+.characterArea{
+    overflow: scroll;
+    max-height: 15rem;
+}
+.characterBox{
+    border: 2px solid var(--lilac);
+    padding: 5px;
+}
+
+
+@keyframes dropDown{
+    0% {top: 6rem;}
+  100% {top: 88%;}
+}
+@keyframes dropUp{
+    0% {top: 88%;}
+  100% {top: 6rem;}
+}
+@keyframes goUp{
+    0% {bottom: -30rem;}
+  100% {bottom: 0rem;}
+}
+@keyframes goDown{
+    0% {bottom: 0rem;}
+  100% {bottom: -30rem;}
+}

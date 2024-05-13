@@ -1,0 +1,133 @@
+<i id="calculatorIcon" (click)="startAnimation()" class="cornerFloat fa-solid fa-calculator fa-2xl"></i>
+        <div id="calculator" class=" invisible pt-2 me-3 ms-2  position-fixed fixed-bottom" >
+            <div class="card">
+                <ul class="ms-2 nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                    <li class="nav-item">
+                        <a (click)="calcType=true" class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#same">Same Type</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="calcType=false" class="nav-link" data-bs-toggle="tab" href="#mix">Mixed Types</a>
+                    </li>
+                    <i id="calculatorIcon2" (click)="EndAnimation()"  class=" invisible cornerFloat fa-solid fa-calculator fa-2xl"></i>
+                </ul>
+                <div class="calculator">
+                    <h2 class="result text-end">{{moneyAmount}} $</h2>
+                    
+                    <div class=" card-body tab-content">
+                        <div class="tab-pane active" id="same">
+                            <div class="row m-0 p-0">
+                                <div class="col-9">
+                                    <div class="mb-2">
+                                        <label for="types">Type of Commission</label>
+                                        <select [(ngModel)]="typeOfComm" name="types">
+                                            @for (item of typeBasic; track $index) {
+                                                <option value="{{item.type}}">{{item.type}}</option>
+                                            }
+                                            @for (item of special; track item;let i=$index) {
+                                                @if (i<2) {
+                                                    <option value="{{item.type}}">{{item.type}}</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                    
+                                    @if (typeOfComm) {
+                                        <label for="specify">Specify &nbsp;</label>
+                                        <select [(ngModel)]="specificComm" name="specify">
+                                            @if (typeBasicNames.includes(typeOfComm)) {
+                                                <option value="0">Sketch (no colored)</option>
+                                                <option value="1">Sketch (colored)</option>
+                                                <option value="2">Lineart</option>
+                                                <option value="3">Colored</option>
+                                                <option value="4">Shaded</option>
+                                                <option value="5">Shaded + Lineart</option>
+                                            }
+                                            @if (typeOfComm=="Charactersheet") {
+                                                <option value="0">Character front</option>
+                                                <option value="1">Character front and back</option>
+                                            }
+                                            @if (typeOfComm=="Custom_Base") {
+                                                <option value="0">Headshot</option>
+                                                <option value="1">Halfbody</option>
+                                                <option value="2">Fullbody</option>
+                                            }
+                                        </select>
+                                        <div class="mt-2">
+                                            <input class="form-check-input mt-0" type="checkbox" [(ngModel)]="nsfw" value="nsfw" aria-label="Checkbox for following text input">
+                                            Nsfw
+                                            @if (typeOfComm=="Charactersheet") {
+                                                <br>
+                                                <input class="form-check-input mt-0" type="checkbox" [(ngModel)]="charSheet[0]" value="nsfw" aria-label="Checkbox for following text input">
+                                                expressions
+                                                <br>
+                                                <input class="form-check-input mt-0" type="checkbox" [(ngModel)]="charSheet[1]" value="nsfw" aria-label="Checkbox for following text input">
+                                                Items
+                                                <br>
+                                                <input class="form-check-input mt-0" type="checkbox" [(ngModel)]="charSheet[2]" value="nsfw" aria-label="Checkbox for following text input">
+                                                textareas
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                                @if (typeBasicNames.includes(typeOfComm)) {
+                                    <div class="col-3">
+                                        <label for="amount">Sum Char: </label>
+                                        <input [(ngModel)]="amountChar" class="col-12" id="amount" type="number" name="amount">
+                                    </div>
+                                }
+                                @if (typeOfComm=="Custom_Base") {
+                                    <div class="col-12 mb-2">
+                                        <input value="0" class="form-check-input" type="radio" name="custBase">
+                                            Human &nbsp;
+                                        <input  value="1" class="form-check-input" type="radio" name="custBase"  checked>
+                                            Furry &nbsp;
+                                        <input  value="2" class="form-check-input" type="radio" name="custBase">
+                                            Feral
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="mix">
+                            <div class="col-5">
+                                <label for="amount">Sum Char: </label>
+                                <input value="1" class="col-12" id="amount" type="number" name="amount">
+                            </div>
+                            <div class="characterArea">
+                                @for (item of [1,2,1,1]; track item; let i = $index) {
+                                    <div class="characterBox mt-2">
+                                        <h3>{{i+1}}. Character</h3>
+                                        <label for="types">Type of Commission</label>
+                                        <select [(ngModel)]="typeOfComm" name="types">
+                                            @for (item of typeBasic; track $index) {
+                                                <option value="{{item.type}}">{{item.type}}</option>
+                                            }
+                                        </select>
+                                        <div class="col">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Lineart &nbsp;
+                                            </label>
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Color &nbsp;
+                                            </label>
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Shaded
+                                            </label>
+                                        </div>
+                                        <input class="form-check-input mt-0" type="checkbox" [(ngModel)]="charSheet[0]" value="nsfw" aria-label="Checkbox for following text input">
+                                        Lineart color &nbsp;
+                                        <input class="form-check-input mt-0" type="checkbox" [(ngModel)]="charSheet[0]" value="nsfw" aria-label="Checkbox for following text input">
+                                        NSFW
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button class=" btn btn-primary" (click)="calc()">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

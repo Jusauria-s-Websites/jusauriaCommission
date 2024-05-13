@@ -1,10 +1,11 @@
-<div class=" pattern">
-    <div class="container heavenSave">
+<div class=" pattern"> 
+    <div id="heavenSave" class="container heavenSave">
+        <app-calculator></app-calculator>
         <div class="row pt-3">
             <div class="col-12">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="text-md-center"> Basics</h2>
+                        <h2 class="text-center"> Basics</h2>
                         <ul>
                             <li>Each character additional 50% </li>
                             <li>NSFW Art: +20% of sfw price </li>
@@ -15,7 +16,6 @@
                         <div class="text-end">
                             <small class="tiny">NSFW examples can be shown in private messages through discord</small>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                                     </div>
                                 }
                                 <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#'+types.type"  data-bs-slide="prev">
-                                    <i class="fa-solid fa-chevron-left fa-2x"></i>
+                                    
                                     <span class="visually-hidden">Previous</span>
                                 </button>
                                 <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#'+types.type" data-bs-slide="next">
@@ -65,9 +65,9 @@
                             </div>
                         </div>
                         <div class="mt-2 col-md-6">
-                            @for (item of types.prices; track $index) {
+                            @for (kind of types.prices; track $index) {
                                 <div class="ms-2 ms-md-5 ">
-                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{item}}</p>
+                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{kind[0]}} {{kind[1]}}$</p>
                                 </div>
                             }
                         </div>
@@ -95,9 +95,9 @@
                             </div>
                         </div>
                         <div class="mt-2 col-md-6">
-                            @for (item of types.prices; track $index) {
-                                <div class="ms-2 ms-md-4 ">
-                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{item}}</p>
+                            @for (kind of types.prices; track $index) {
+                                <div class="ms-2 ms-md-5 ">
+                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{kind[0]}} {{kind[1]}}$</p>
                                 </div>
                             }
                         </div>
@@ -131,7 +131,7 @@
                         <div class="mt-2">
                             @for (item of types.prices; track $index) {
                                 <div class="ms-4 ms-md-5 ps-5">
-                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{item}}</p>
+                                    <p class=""><i class="fa-solid fa-splotch fa-spin"></i>&nbsp;&nbsp; {{item[0]}}</p>
                                 </div>
                             }
                         </div>
