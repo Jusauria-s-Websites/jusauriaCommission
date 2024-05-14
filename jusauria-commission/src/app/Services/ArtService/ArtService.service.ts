@@ -73,7 +73,7 @@ export class OfferServiceService {
     ],Albums.CustomBaseAlbum),
 
     new CommissionDetails("Animations","Not Frame by Frame. Animation will be made with Live2d",[
-      ["Base price: From above options"],
+      ["Base price: From above options * 20%"],
       ["Animation price: Live2d Commission"],
     ],Albums.AnimationAlbum),
 
