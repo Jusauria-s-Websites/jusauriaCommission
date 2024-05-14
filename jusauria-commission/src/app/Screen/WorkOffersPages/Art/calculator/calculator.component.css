@@ -4,7 +4,7 @@
     animation: dropDown 1.5s forwards;
 }
 .goUp{
-    animation: goUp 1.5s forwards;
+    animation: goUp 1s forwards;
 }
 .dropUp{
     animation: dropUp 2s forwards;
@@ -18,20 +18,22 @@
     right: 1rem;
     background-color: var(--lightLilac);
     color: var(--darkPinkRed);
-    border: 1px solid white;
     padding: 1.3rem .5rem;
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 }
 
 #calculator{
     max-height: 85% !important;
+    right: 0px;
+    z-index: 20;
 }
 .calculator{
     background-color: var(--lightLilac);
-    margin-bottom: 0.30rem;
+    margin-bottom: 0.40rem;
     z-index: 3;
     color: var(--darkPinkRed);
+    padding: 3px;
+    border-radius: 5px;
 }
 .calculator button{
     background-color:var(--lilac);
@@ -61,8 +63,10 @@
     margin-top: .7rem;
 }
 .characterArea{
-    overflow: scroll;
-    max-height: 15rem;
+    overflow: auto;
+    max-height: 17rem;
+    background-color: #e2bce2;
+    padding: 6px;
 }
 .characterBox{
     border: 2px solid var(--lilac);
