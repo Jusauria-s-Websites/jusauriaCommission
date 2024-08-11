@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     this.serviceOffers = Object.values(WorkOffersEnum)
     this.serviceStatus= comms.commServiceOffers;
     if(this.logoLink==""){
-      this.imgur.getLogoImage().then(value=>this.logoLink=value)
+      this.imgur.accessLogo().then(value=>this.logoLink=value)
     }
   }
   ngAfterViewInit(): void {
