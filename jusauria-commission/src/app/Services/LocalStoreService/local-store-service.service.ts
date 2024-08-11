@@ -14,7 +14,12 @@ export class LocalStoreServiceService {
       localStorage.setItem(folderName, JSON.stringify(values));
       resolve();
     })
-    
+  }
+  addToStoreImage(pictureName: string, value:any):Promise<void>{
+    return new Promise((resolve)=>{
+      localStorage.setItem(pictureName, value);
+      resolve();
+    })
   }
   getFromStore(folderName:Albums): Promise<AlbumImage[]>{
     return new Promise((resolve,reject)=>{
@@ -26,6 +31,16 @@ export class LocalStoreServiceService {
       else reject();
     })
     
+  }
+  getFromStoreImage(pictureName: string): Promise<string>{
+    return new Promise((resolve,reject)=>{
+      let imageLink =localStorage.getItem(pictureName)
+
+      if(imageLink){
+        resolve(imageLink);
+      } 
+      else reject();
+    })
   }
   deleteFromStore(folderName:Albums): Promise<void>{
     return new Promise((resolve)=>{

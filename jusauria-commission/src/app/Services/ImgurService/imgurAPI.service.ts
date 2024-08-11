@@ -26,7 +26,7 @@ export class ImgurAPIService {
         })
       })
     })
-   
+    
   }
   getAlbumImages(album:Albums): Promise<AlbumImage[]>{    
     return new Promise((resolve,reject)=>{this.http.get<any>(this.apiUrlBase+`account/Jusauria/album/${album}`, {
@@ -47,18 +47,32 @@ export class ImgurAPIService {
     })
     });
   }
-    getLogoImage():Promise<string>{
-      return new Promise((resolve, reject)=>{
-        this.http.get<any>(this.apiUrlBase+`account/Jusauria/image/TK0XLod`, {
-          headers: {'Authorization': `Bearer ${this.accessToken}`}
-        }).subscribe(result=>{
-          if(result.status==200){
-            resolve(result.data.link)
-          }else{
-            reject(result);
-          }
+  accessLogo():Promise<string>{
+    return new Promise((resolve,reject)=>{
+      this.localService.getFromStoreImage("logo").then(array=>{
+        resolve(array)
+      }).catch(()=>{
+        this.getLogoImage().then((array)=>{
+          resolve(array)
+        }).catch(()=>{
+          reject();
         })
       })
-      };
+    })
+    
   }
-  
+  getLogoImage():Promise<string>{
+    return new Promise((resolve, reject)=>{
+      this.http.get<any>(this.apiUrlBase+`account/Jusauria/image/TK0XLod`, {
+        headers: {'Authorization': `Bearer ${this.accessToken}`}
+      }).subscribe(result=>{
+        if(result.status==200){
+          resolve(result.data.link)
+          this.localService.addToStoreImage("logo", result.data.link);
+        }else{
+          reject(result);
+        }
+      })
+    })
+  };
+}
