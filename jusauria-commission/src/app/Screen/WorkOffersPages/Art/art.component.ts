@@ -29,7 +29,6 @@ export class ArtComponent{
     this.special=OfferServiceService.specialArtComms;
     this.backgrounds=OfferServiceService.backgroundType;
     
-    if(window.location.href!="http://localhost:4200/Art"){
     for(let i =0; i<this.typeBasic.length;i++){
       imgurService.accessAlbum(this.typeBasic[i].artExampleAlbum).then(item=>{
         this.albumImages.set(this.typeBasic[i].type,item);
@@ -49,6 +48,4 @@ export class ArtComponent{
       this.albumImages.set('ych',item);
     })
   }
-  
-}
 }

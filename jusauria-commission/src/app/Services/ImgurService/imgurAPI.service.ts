@@ -16,6 +16,10 @@ export class ImgurAPIService {
   constructor(private http: HttpClient, private localService: LocalStoreServiceService) {}
   accessAlbum(folderName: Albums):Promise<AlbumImage[]>{
     return new Promise((resolve,reject)=>{
+      if(window.location.href.includes("http://localhost:4200")){
+        reject()
+        return
+      } 
       this.localService.getFromStore(folderName).then(array=>{
         resolve(array)
       }).catch(()=>{
@@ -26,7 +30,6 @@ export class ImgurAPIService {
         })
       })
     })
-    
   }
   getAlbumImages(album:Albums): Promise<AlbumImage[]>{    
     return new Promise((resolve,reject)=>{this.http.get<any>(this.apiUrlBase+`account/Jusauria/album/${album}`, {
@@ -49,6 +52,10 @@ export class ImgurAPIService {
   }
   accessLogo():Promise<string>{
     return new Promise((resolve,reject)=>{
+      if(window.location.href.includes("http://localhost:4200/")){
+        reject()
+        return
+      }
       this.localService.getFromStoreImage("logo").then(array=>{
         resolve(array)
       }).catch(()=>{

@@ -7,7 +7,6 @@ import { AlbumImage } from '../../Pojos/Objects/AlbumImage';
 import { Albums } from '../../Pojos/enums/Albums.enum';
 import { ImgurAPIService } from '../../Services/ImgurService/imgurAPI.service';
 
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -23,10 +22,15 @@ export class HomeComponent{
   constructor(private imgurService: ImgurAPIService){
     imgurService.accessAlbum(Albums.homeAlbum).then(item=>{
       this.albumImages.set('home',item);
+    }).catch(()=>{
+      this.albumImages.set('home', [new AlbumImage('../../../assets/cheap_ych.png',"ychAd")] );
     })
     imgurService.accessAlbum(Albums.ServiceIconAlbum).then(item=>{
       this.albumImages.set('icons',item);
+    }).catch(()=>{
+      this.albumImages.set('icons', [new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons")] );
     })
+
   }
 
 }
