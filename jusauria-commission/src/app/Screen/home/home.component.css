@@ -4,8 +4,9 @@
     margin-top: -1rem !important;
 }
 .carousel-image{
-    width: 100%;
-    height: 8rem;
+    width:100%;
+    height: auto;
+    min-height: 4.55rem;
     object-fit: cover; 
 }
 .carousel-item{
@@ -14,6 +15,21 @@
 .navSpace{
     margin-top: 4.5rem;
 }
+/* Style for mobile devices */
+@media (max-width: 768px) {
+    .carousel-image {
+        width: 125%;
+        height: auto; /* Maintain aspect ratio */
+        object-fit:fill; 
+        position: relative;
+        left:-14%
+    }
+    .commission{
+        font-size: 1.4rem;
+
+    }
+}
+
 /* --- Colors --- */
 .commOpen{
     color: rgb(16, 203, 16);
