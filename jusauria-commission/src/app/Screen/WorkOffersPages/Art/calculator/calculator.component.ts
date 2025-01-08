@@ -85,7 +85,8 @@ export class CalculatorComponent {
       if(this.amountChar<1) this.amountChar=1
       if(this.typeBasicNames.includes(this.typeOfComm)){
         this.moneyAmount= this.typeBasic.find(e=>e.type==this.typeOfComm)?.prices[this.specificComm][1];
-        this.moneyAmount *= (this.amountChar > 1 ? 1+this.amountChar * 0.5 : 1);
+        this.moneyAmount *= (this.amountChar > 1 ? 1+(this.amountChar-1) * 0.5 : 1);
+        console.log((this.amountChar > 1 ? this.amountChar * 0.5 : 1))
         this.moneyAmount *=(this.nsfw?1.2:1);
       }
       else if(this.typeOfComm=="Charactersheet") {
