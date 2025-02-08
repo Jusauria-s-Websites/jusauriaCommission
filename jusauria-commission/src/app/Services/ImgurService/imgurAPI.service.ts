@@ -50,6 +50,25 @@ export class ImgurAPIService {
     })
     });
   }
+  getAlbumImagesDescription(album:Albums): Promise<AlbumImage[]>{    
+    return new Promise((resolve,reject)=>{this.http.get<any>(this.apiUrlBase+`account/Jusauria/album/${album}`, {
+      headers: {
+        'Authorization': `Bearer ${this.accessToken}`
+      }
+    }).subscribe(result=>{
+      if(result.status==200){
+        //cuts the result so that you get the name and the link of image
+        const albumImages: AlbumImage[] = result.data.images.map((image: any) => {
+          return new AlbumImage(image.link, image.description);
+        });
+        resolve(albumImages);
+        this.localService.addToStore(album, albumImages);
+      }else{
+        reject(result);
+      }
+    })
+    });
+  }
   accessLogo():Promise<string>{
     return new Promise((resolve,reject)=>{
       if(window.location.href.includes("http://localhost:4200/")){

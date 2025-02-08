@@ -20,9 +20,12 @@
             {{ commStatusService.getCommStatusText() }}
         </h1>
     </div>
-    <div class="row">
-        <h2 class="col-12">Services</h2>
-        <small class="mb-2">Prices are written with $, paying can be in USD, Euro or Pound. Payment: PayPal or Amazon Gift Card</small>
+    <div class="row d-flex justify-content-center">
+        <div  class="col-md-9 col-lg-11 mb-3">
+            <h2>Commissions Types</h2>
+            <small>Prices are written with $, paying can be in USD, Euro or Pound. Payment: PayPal, Kofi or Amazon Gift Card.<br>Ordering a commission signifies your acceptance of the <a href="/terms">Terms and Services</a>. </small>
+        </div>
+       
         <div class="row d-flex justify-content-center">
             @for(service of commStatusService.commServiceOffers; track service; let i = $index){
                 @if (service.status) {
@@ -50,6 +53,14 @@
                 }
                 
             }
+        </div>
+
+        <div  class="col-md-9 col-lg-11 mb-3">
+            <h2>YCH Collection</h2>
+            <small>For finished examples, dm Jusauria</small>
+           <app-gallery [images]="albumImages.get('ych') ?? []">
+
+           </app-gallery>
         </div>
     </div>
 </div>

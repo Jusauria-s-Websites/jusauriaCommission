@@ -2,6 +2,7 @@ export enum Albums {
     /* --- Home --- */ 
     ServiceIconAlbum="Q0BAANg",
     homeAlbum="mgacmu3",
+    homeYCHAlbum="5A21hIA",
     /* --- Art Basic ---*/ 
     HeadshotAlbum="QKDzKQ0",
     HalfBodyAlbum="BuUFfx2",

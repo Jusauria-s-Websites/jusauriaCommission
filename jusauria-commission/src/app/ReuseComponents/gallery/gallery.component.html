@@ -1,0 +1,24 @@
+
+  <div class="gallery-container">
+    <!-- Left Arrow -->
+    <button (click)="prev()" [disabled]="currentIndex === 0" class="nav-button left">
+      &#9665;
+    </button>
+  
+    <!-- Image Grid -->
+    <div class="image-grid">
+        @for (image of visibleImages; track $index) {
+          <div>
+            <img [src]="image.link" class="gallery-image">
+            <span class="ych-name">{{image.name}}</span>
+          </div>
+            
+        }
+    </div>
+  
+    <!-- Right Arrow -->
+    <button (click)="next()" [disabled]="currentIndex + imagesPerPage >= images.length" class="nav-button right">
+      &#9655;
+    </button>
+  </div>
+  
