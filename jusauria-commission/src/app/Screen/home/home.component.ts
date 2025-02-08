@@ -31,7 +31,7 @@ export class HomeComponent{
     }).catch(()=>{
       this.albumImages.set('icons', [new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons"),new AlbumImage('../../../assets/eyyyy.png',"icons")] );
     })
-    imgurService.accessAlbum(Albums.homeYCHAlbum).then(item=>{
+    imgurService.accessAlbumDescription(Albums.homeYCHAlbum).then(item=>{
       this.albumImages.set('ych',item);
     }).catch(()=>{
       this.albumImages.set('ych', [new AlbumImage('../../../assets/eyyyy.png',"Big Hug - Flat: 3$; Shaded: 5$"),new AlbumImage('../../../assets/eyyyy.png',"Hug - Flat: 10$; Shaded: 15$"),new AlbumImage('../../../assets/eyyyy.png',"ych"),new AlbumImage('../../../assets/eyyyy.png',"ych"),new AlbumImage('../../../assets/eyyyy.png',"ych"),new AlbumImage('../../../assets/eyyyy.png',"ych"),new AlbumImage('../../../assets/eyyyy.png',"ych"),new AlbumImage('../../../assets/eyyyy.png',"ych")] );
