@@ -35,7 +35,7 @@
     color: rgb(16, 203, 16);
 }
 .commClosed{
-    color:red
+    color:red;
 }
 .commPart{
     color:orange
@@ -76,7 +76,6 @@
     background-repeat: repeat;  
     background-size: 29%;
     border: var(--pinkRed) 2px solid;  
-    animation: moving 400s linear infinite;
 }
 .serviceCard0 .card-footer a{
     background-color:  var(--lightPinkRed);

@@ -25,27 +25,30 @@
         <small class="mb-2">Prices are written with $, paying can be in USD, Euro or Pound. Payment: PayPal or Amazon Gift Card</small>
         <div class="row d-flex justify-content-center">
             @for(service of commStatusService.commServiceOffers; track service; let i = $index){
-                <div class="card col-md-8 col-lg-5 mb-3 mb-md-5 me-md-5 serviceCard{{i}}">
-                    <div class="row d-flex justify-content-center" >
-                        <div class="row mt-1 pb-3" >
-                            <h3 class="card-title text-center mt-2 align-self-center" 
-                            > {{service.title}} </h3>
-                            <div class="col-4 col-md-3 p-0 p-md-1 d-flex align-items-start">
-                                <img [src]="service.status? albumImages.get('icons')?.at(i*2)?.link:albumImages.get('icons')?.at(i*2+1)?.link" class="card-img" alt="...">
-                            </div>
-                            <div class="col-8 col-md-9 d-flex align-items-center p-0">
-                                <div class="card-body pt-0 ">
-                                    <p class="card-text">{{service.description}}</p>
+                @if (service.status) {
+                    <div class="card col-md-8 col-lg-5 mb-3 mb-md-5 me-md-5 serviceCard{{i}}">
+                        <div class="row d-flex justify-content-center" >
+                            <div class="row mt-1 pb-3" >
+                                <h3 class="card-title text-center mt-2 align-self-center" 
+                                > {{service.title}} </h3>
+                                <div class="col-4 col-md-3 p-0 p-md-1 d-flex align-items-start">
+                                    <img [src]="service.status? albumImages.get('icons')?.at(i*2)?.link:albumImages.get('icons')?.at(i*2+1)?.link" class="card-img" alt="...">
+                                </div>
+                                <div class="col-8 col-md-9 d-flex align-items-center p-0">
+                                    <div class="card-body pt-0 ">
+                                        <p class="card-text">{{service.description}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                       
-                        <div class="card-footer text-end">
-                            <a [href]="service.status ? './' + service.mainPage : '#'" class="btn" [ngClass]="service.status?'':'disabled'">More Details ></a>
-
+                           
+                            <div class="card-footer text-end">
+                                <a [href]="service.status ? './' + service.mainPage : '#'" class="btn">More Details ></a>
+    
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
+                
             }
         </div>
     </div>

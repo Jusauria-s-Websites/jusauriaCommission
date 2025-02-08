@@ -19,7 +19,6 @@ button>i{
 }
 /* --- Background --- */
 .pattern{
-    animation: moving 600s linear infinite;
     background-image: url('../../../../assets/artPattern.png');
     background-size: 35%;
     background-repeat: repeat;    
