@@ -4,6 +4,7 @@ import { Social } from '../../Pojos/Objects/Social';
 import { CommonModule } from '@angular/common';
 import { Router } from 'express';
 import { RouterModule } from '@angular/router';
+import { LocalStoreServiceService } from '../../Services/LocalStoreService/local-store-service.service';
 
 @Component({
   selector: 'app-footer',
@@ -15,4 +16,10 @@ import { RouterModule } from '@angular/router';
 export class FooterComponent {
   currentDate: Date = new Date();
   currentSocials:Social[]= SocialServiceService.currentSocials;
+  constructor(private localService: LocalStoreServiceService) {}
+
+  delteLocalStorage(){
+    alert("Storage Deleted")
+    this.localService.deleteStore()
+  }
 }

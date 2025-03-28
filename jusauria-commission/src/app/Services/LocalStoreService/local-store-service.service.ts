@@ -48,4 +48,10 @@ export class LocalStoreServiceService {
       resolve();
     })
   }
+  deleteStore(): Promise<void>{
+    return new Promise((resolve)=>{
+      localStorage.clear();
+      resolve();
+    })
+  }
 }

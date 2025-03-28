@@ -7,6 +7,8 @@ import { VTuberRiggingComponent } from './Screen/WorkOffersPages/Vtuber/vtuber.c
 import { ProgrammingComponent } from './Screen/WorkOffersPages/Programming/programming.component';
 import { AboutProfileComponent } from './Screen/about-profile/about-profile.component';
 import { TermsComponent } from './Screen/terms/terms.component';
+import { ImpressumComponent } from './Screen/impressum/impressum.component';
+import { PrivacyComponent } from './Screen/privacy/privacy.component';
 
 export const routes: Routes = [
     // --- Main Page ---
@@ -14,6 +16,8 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutProfileComponent },
     { path: 'terms', component: TermsComponent },
+    { path: 'impressum', component: ImpressumComponent },
+    { path: 'privacy', component: PrivacyComponent },
     // --- Work Services ---
     { path: WorkOffersEnum.art, component: ArtComponent },
     { path: WorkOffersEnum.embroidery, component: EmbroideryComponent },
