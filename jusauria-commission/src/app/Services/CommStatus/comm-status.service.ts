@@ -7,7 +7,7 @@ import { WorkOffersEnum } from '../../Pojos/enums/work-offers-enum';
 })
 export class CommStatusService {
   private commStatusText: string[]=["✓ All Commission Open ✓ ", "✕ All Commission Closed ✕", "▷ Commission Partly Open ◁"];
-  commState: number = 2;
+  commState: number = 3;
   commServiceOffers: ServiceDetails[]=[
     new ServiceDetails("Art Commission","Commissions can range from simple Icons to detailed refsheets.","/"+WorkOffersEnum.art,"",true),
     new ServiceDetails("Programming Commission","Commissions include hiring as solo programmer or team member for a project.","/"+WorkOffersEnum.program,"",true),
