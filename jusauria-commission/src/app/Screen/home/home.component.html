@@ -19,6 +19,16 @@
         <h1 class="text-center commission" [ngClass]="{'commOpen': commStatusService.commState==0 , 'commClosed': commStatusService.commState==1,'commPart': commStatusService.commState==2 }">
             {{ commStatusService.getCommStatusText() }}
         </h1>
+        @if (commStatusService.commState==1){
+        <div style="width:100%; max-width:1200px; height:400px; margin:auto; overflow:hidden;">
+            <iframe
+                src="https://trello.com/b/iY3kSfO7/jusauria-comm-list"
+                style="width:130%; height:500px; border:0; transform:scale(0.75); transform-origin:0 0;"
+                allowfullscreen>
+            </iframe>
+        </div>
+        }
+        
     </div>
     <div class="row d-flex justify-content-center">
         <div  class="col-md-9 col-lg-11 mb-3">
@@ -62,5 +72,18 @@
 
            </app-gallery>
         </div>
+         @if (commStatusService.commState!=1){
+        <div  class="col-md-9 col-lg-11 mb-3">
+            <h2>Commission Queue</h2>
+            <small>For more Details or Deadline worries, please dm Jusauria</small>
+            <div style="width:100%; max-width:1200px; height:400px; margin:auto; overflow:hidden;">
+                <iframe
+                    src="https://trello.com/b/iY3kSfO7/jusauria-comm-list"
+                    style="width:130%; height:500px; border:0; transform:scale(0.75); transform-origin:0 0;"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    }
     </div>
 </div>
