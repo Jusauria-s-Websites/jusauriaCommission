@@ -5,6 +5,9 @@
 /* --- Examples --- */
 img.img-fluid{
     width: 60%;
+    max-height: unset;
+    min-height: unset;
+    max-width: unset;
 }
 img{
     max-height: 12rem;
@@ -33,6 +36,9 @@ button>i{
 @media (max-width: 768px) {
     img.img-fluid{
         width: 80%;
+        max-height: unset;
+        min-height: unset;
+        max-width: unset;
     }
 }
 @media only screen and (min-width: 600px) {
