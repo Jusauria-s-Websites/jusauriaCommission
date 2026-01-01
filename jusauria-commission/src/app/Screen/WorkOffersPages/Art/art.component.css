@@ -3,6 +3,9 @@
     font-size: .55rem;
 }
 /* --- Examples --- */
+img.img-fluid{
+    width: 60%;
+}
 img{
     max-height: 12rem;
     min-height: 12rem;
@@ -27,6 +30,11 @@ button>i{
     background: var(--skinColor);
 }
 
+@media (max-width: 768px) {
+    img.img-fluid{
+        width: 80%;
+    }
+}
 @media only screen and (min-width: 600px) {
     .pattern {
         padding: 0px 10%;

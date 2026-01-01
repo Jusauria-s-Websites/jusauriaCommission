@@ -51,7 +51,14 @@
                             <div class="carousel-inner align-items-center">                          
                                 @for (items of  albumImages.get(types.type); track items; let imageIndex=$index) {
                                     <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
-                                        <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+                                        <img
+                                            [src]="items.link"
+                                            class="d-block mx-auto lightbox-img"
+                                            alt=""
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#imageLightbox"
+                                            (click)="openLightbox(items.link)"
+                                            >
                                     </div>
                                 }
                                 <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#'+types.type"  data-bs-slide="prev">
@@ -169,6 +176,15 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>   
+        <div class="modal fade" id="imageLightbox" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content bg-transparent border-0">
+                <button type="button" class="btn-close btn-close-white ms-auto me-2 mb-2" data-bs-dismiss="modal"></button>
+                <img [src]="lightboxImage" class="img-fluid rounded mx-auto d-block">
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>

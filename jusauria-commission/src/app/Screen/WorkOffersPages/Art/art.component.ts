@@ -23,7 +23,8 @@ export class ArtComponent{
   special: CommissionDetails[];
   backgrounds: CommissionDetails[];
   albumImages: Map<string,AlbumImage[]>= new Map();
-  
+  lightboxImage = '';
+
   constructor(private imgurService: ImgurAPIService){
     this.typeBasic= OfferServiceService.basicArtComms;
     this.special=OfferServiceService.specialArtComms;
@@ -47,5 +48,11 @@ export class ArtComponent{
     imgurService.accessAlbum(Albums.YCHAlbum).then(item=>{
       this.albumImages.set('ych',item);
     })
+    
   }
+
+
+openLightbox(src: string): void {
+  this.lightboxImage = src;
+}
 }
