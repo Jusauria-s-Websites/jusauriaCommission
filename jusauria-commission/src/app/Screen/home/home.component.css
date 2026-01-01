@@ -2,15 +2,15 @@
 /* --- Slider --- */
 #carouselExampleIndicators{
     margin-top: -1rem !important;
+
 }
 .carousel-image{
-    width:100%;
-    height: auto;
-    min-height: 4.55rem;
+    height: 16rem;
     object-fit: cover; 
 }
 .carousel-item{
-    width: none !important;
+        display: flex;
+    justify-content: center;
 }
 .navSpace{
     margin-top: 4.5rem;
@@ -18,11 +18,8 @@
 /* Style for mobile devices */
 @media (max-width: 768px) {
     .carousel-image {
-        width: 125%;
-        height: auto; /* Maintain aspect ratio */
-        object-fit:fill; 
-        position: relative;
-        left:-14%
+        height: 9rem; /* Maintain aspect ratio */
+        object-fit:cover; 
     }
     .commission{
         font-size: 1.4rem;
