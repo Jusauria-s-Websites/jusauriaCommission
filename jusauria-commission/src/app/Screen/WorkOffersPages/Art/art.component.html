@@ -88,7 +88,14 @@
                             <div class="carousel-inner align-items-center">                        
                                 @for (items of  albumImages.get(types.type); track items; let imageIndex=$index) {
                                     <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
-                                        <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+                                        <img
+                                            [src]="items.link"
+                                            class="d-block mx-auto lightbox-img"
+                                            alt=""
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#imageLightbox"
+                                            (click)="openLightbox(items.link)"
+                                            >
                                     </div>
                                 }
                                 <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#'+types.type"  data-bs-slide="prev">
@@ -122,7 +129,14 @@
                             <div class="carousel-inner align-items-center">                        
                                 @for (items of albumImages.get(types.type); track items; let imageIndex=$index) {
                                     <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
-                                        <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+                                         <img
+                                            [src]="items.link"
+                                            class="d-block mx-auto lightbox-img"
+                                            alt=""
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#imageLightbox"
+                                            (click)="openLightbox(items.link)"
+                                            >
                                     </div>
                                 }
                                 <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#'+types.type"  data-bs-slide="prev">
@@ -154,7 +168,14 @@
                             <div class="carousel-inner align-items-center">                         
                                 @for (items of albumImages.get('ych'); track items; let imageIndex=$index) {
                                     <div class="carousel-item" [ngClass]="{'active':imageIndex==0}">
-                                        <img src="{{items.link}}" class="d-block mx-auto" alt="...">
+                                         <img
+                                            [src]="items.link"
+                                            class="d-block mx-auto lightbox-img"
+                                            alt=""
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#imageLightbox"
+                                            (click)="openLightbox(items.link)"
+                                            >
                                     </div>
                                 }
                                 <button class="carousel-control-prev " type="button" [attr.data-bs-target]="'#ych'"  data-bs-slide="prev">
@@ -171,7 +192,7 @@
                     <div class="col-md-6 mt-2 d-flex align-items-center">
                         <div class="row">
                             <p class="col-6 m-0 col-md-12 text-decoration-underline">All Open YCH are listed here: </p>
-                            <a class="col-6 align-self-center" href="https://www.deviantart.com/jusauria/gallery/78700756/ych"><button>YCH LIST</button></a>
+                            <a class="col-6 align-self-center" target="_blank" href="https://www.deviantart.com/jusauria/gallery/78700756/ych"><button>YCH LIST</button></a>
                         </div>
                     </div>
                 </div>

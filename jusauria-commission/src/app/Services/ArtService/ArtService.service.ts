@@ -62,7 +62,7 @@ export class OfferServiceService {
       ["Add Items +", 10],
       ["Include textareas +", 5]
     ],Albums.RefSheetAlbum),
-    
+    /*
     new CommissionDetails("Custom_Base","Base for adopt use, own drawing, etc.",[
       ["Headshot", 3],
       ["Halfbody", 5],
@@ -70,15 +70,18 @@ export class OfferServiceService {
       ["Humans/Humanoids +", 1],
       ["Furry (doesn't matter species) +", 2],
       ["Feral (doesn't matter species) +", 3]
-    ],Albums.CustomBaseAlbum),
-
+    ],Albums.CustomBaseAlbum),*/
+   new CommissionDetails("Group Art - more than 5 Characters","More than 5 Characters",[
+      ["Base price: From above options * 20%"],
+      ["After: +10$ per Hour"],
+    ],Albums.GroupArtAlbum),
     new CommissionDetails("Animations","Not Frame by Frame. Animation will be made with Live2d",[
       ["Base price: From above options * 20%"],
-      ["Animation price: Live2d Commission"],
+      ["After: +10$ per Hour"],
     ],Albums.AnimationAlbum),
 
     new CommissionDetails("Backgrounds","I draw a background scene for you.",[
-      ["Between 10$ to 60$. Depends much from the scene I should draw and my experiences drawing this."],
+      ["Between 10$ to 60$ or more. Payrate: 10$ per hour"],
     ],Albums.BackgroundAlbum),
   ]
 

@@ -13,6 +13,7 @@ export enum Albums {
     AnimationAlbum="bV0cHnh",
     RefSheetAlbum="tpvXhTD",
     CustomBaseAlbum="bnYhxs4",
+    GroupArtAlbum="S8DpcZd",
     BackgroundAlbum="dwo5AGu",
     /* --- Example Art BG --- */
     SimpleBackgroundAlbum="YXKZadp",
