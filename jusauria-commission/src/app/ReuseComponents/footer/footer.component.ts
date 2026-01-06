@@ -16,6 +16,7 @@ import { LocalStoreServiceService } from '../../Services/LocalStoreService/local
 export class FooterComponent {
   currentDate: Date = new Date();
   currentSocials:Social[]= SocialServiceService.currentSocials;
+  nsfwSocials:Social[]= SocialServiceService.socialsNSFW;
   constructor(private localService: LocalStoreServiceService) {}
 
   delteLocalStorage(){
